@@ -1,6 +1,6 @@
 # 🎮 AI Exploration Workshop @ Value Chain Hackers
 
----
+---https://www.theprofessor.info/documents/7c9eb691-8194-4a56-a21e-c42c507e1049
 
 https://valuechainhackers.xyz/workshop
 
