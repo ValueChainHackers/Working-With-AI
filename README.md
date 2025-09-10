@@ -2,6 +2,9 @@
 
 ---
 
+https://valuechainhackers.xyz/workshop
+
+
 ## 📑 Table of Contents
 - [Overview](#overview)
 - [Your Mission](#your-mission)
