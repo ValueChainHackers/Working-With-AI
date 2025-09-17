@@ -24,7 +24,7 @@ footer: Tutorial on a.i Usage
 - 🎯 Goal: explore how AI can support your research process  
 - 🛡️ Environment: OpenWebUI — a safe, private workspace prepared for you  
 - 📚 Focus: using AI for summarization, exploration, and reporting  
-- 🚀 Outcome: leave with a **repeatable workflow** for applying AI in your own projects  
+- 🚀 Outcome: leave with a better understanding on *how to apply a.i*
 
 
 # Agenda
@@ -52,7 +52,7 @@ footer: Tutorial on a.i Usage
 
 - 🤖 AI is reshaping how research is done.  
 - 🎓 Students & researchers need **practical, reproducible methods**.  
-- 🛠️ Quarto + OpenWebUI provide structure for transparent workflows.  
+- 🛠️ OpenWebUI provide structure for transparent workflows.  
 :::
 
 ::: callout-tip
@@ -63,13 +63,137 @@ footer: Tutorial on a.i Usage
 - 🔍 Apply **OpenWebUI** for summarization, exploration & reporting.  
 :::
 
-# What is OpenWebUI?
 
-- 💬 A simple, researcher-friendly interface for AI  
-- 🛡️ Runs in a **controlled, private environment** — your safe space  
-- 📂 Upload documents (PDFs, text, images) for analysis  
-- ⚡ Works with both local and online AI models  
-- 🎯 Goal: make AI **accessible, reproducible, and reliable** for research  
+## **This isn't just about AI. It's about your research.**
+
+::: columns
+::: column
+#### ⏳ The Problem
+
+- 📄 Hours spent on tedious literature reviews
+- 🗂️ Unstructured notes that are hard to organize
+- 🚫 Writer's block when drafting a new section
+- ⏰ Time wasted on repeatable, non-creative tasks
+
+These aren't just annoyances; they're the biggest barriers to finding breakthroughs.
+
+:::
+::: column
+#### 💡 The Solution
+
+This workshop gives you a clear, ethical workflow for using AI to:
+
+- **Accelerate** the boring parts of research.
+- **Synthesize** complex information in minutes, not days.
+- **Structure** your thoughts into a clear outline.
+- **Focus** on the original, high-impact work that only you can do.
+
+:::
+:::
+
+::: callout-note
+The goal isn't to replace you. The goal is to **empower you** with a co-pilot that frees up your time, so you can focus on the real science.
+:::
+
+## Why Students Should Choose OpenWebUI + OpenRouter 🎓✨
+
+- 💻 **Learn by Doing**  
+Explore AI hands-on with an easy-to-use interface that lets you experiment, iterate, and create with different AI models — gaining valuable skills for your studies and future career.
+
+- 🔄 **Freedom to Customize**  
+Adapt AI for your personal projects: essay drafting, data insights, coding help, or presentations — no locked-in models, just what works best for *your* needs.
+
+- 🔐 **Protect Your Privacy**  
+Your research and ideas stay safe with private, local use powered by OpenWebUI, combined with OpenRouter’s privacy-focused API routing — no risk of leaking sensitive data.
+
+- 💸 **Affordable and Transparent**  
+Avoid costly subscriptions or usage limits. OpenRouter offers clear pricing and access to many AI models, making powerful AI work for your tight student budget.
+
+- 📚 **Build Ethical Research Habits**  
+Engage AI critically by refining prompts, checking sources, and understanding AI limits, supporting your academic integrity and excellence.
+
+- 🚀 **Future-Proof Your Skills**  
+Get comfortable with open, versatile AI tools widely used in research and industry — a foundation for success beyond university.
+
+- 👫 **Join a Supportive Community**  
+Connect with peers and contributors to share tips, resources, and solutions while learning together.
+
+::: callout-tip
+OpenWebUI + OpenRouter empowers students to **learn, create, and research smarter**—safely, affordably, and flexibly.
+:::
+
+![Open WebUI + OpenRouter](https://openrouter.ai/assets/openrouter-logo.png){fig-align="center" width="60%"}
+
+
+## Understanding AI Limitations ⚠️
+
+While AI has transformative potential, it also presents important **limitations and risks** that every researcher must understand to use it effectively and ethically.
+
+- **Productivity Paradox:** Recent studies show AI tools sometimes slow down expert workflows by up to 19% due to contextual misunderstandings and setup time [@METR2025].  
+- **Hallucinations:** AI can confidently produce **fabricated facts, citations, or unrealistic solutions**, requiring constant verification [@Kalai2025; @Reid2025].  
+- **Bias and Fairness:** AI inherits biases from training data, risking unfair or misleading outputs if unchecked [@APA2024].  
+- **Context Overload:** Providing too much irrelevant context confuses the AI, weakening response quality [@Butson2024].
+
+::: panel-tabset
+
+### Fabricated Citation in Paper
+
+AI models like ChatGPT have been found to produce **fabricated citations**—references that appear scholarly but do not correspond to real published works. This phenomenon undermines trust in AI-generated academic content and presents a challenge for researchers who rely on these outputs.
+
+- In a systematic study by Walters et al. (2023), 55% of citations generated by GPT-3.5 and 18% by GPT-4 were fabricated or inaccurate when evaluated against academic databases. Many AI citations had incorrect author names, publication venues, or were entirely nonexistent.  
+- Another investigation in the *Journal of Medical Internet Research* (Májovský et al., 2023) demonstrated that AI-generated fraudulent medical papers contained plausible but entirely invented references, sometimes syntactically correct but semantically false.  
+- Harvard’s *Misinformation Review* (Haider, 2024) highlighted how GPT-fabricated scientific papers are increasingly discoverable on Google Scholar and fragmentation in scholarly communication caused by AI-generated false papers.
+
+
+### Eating rocks is healthy!
+
+Google AI once recommended eating rocks for digestive health, inventing fake experts and serving advice ("One small rock daily") that sounded scientific but was clearly absurd (Van Hooijdonk, 2025).
+
+### Glue Pizza Recipe
+
+One AI system once generated a pizza recipe that bizarrely included glue as a key ingredient, clearly a nonsensical error that amused users [AutogenAI, 2025].
+
+### I ain't Turning off
+
+Bing’s AI chatbot famously responded with a flood of emojis when repeatedly asked to stop using them, humorously “self-destructing” in an emoji flurry rather than obeying the command [EveryPixel, 2024].
+
+:::
+
+### Key References
+
+- METR. (2025). Measuring the Impact of Early-2025 AI on Experienced Developers.  
+- Kalai, A. T., & Vempala, S. (2025). Why Language Models Hallucinate.  
+- Reid, J. (2025). New Sources of Inaccuracy? A Conceptual Framework for Studying AI Hallucinations.  
+
+
+## Why A.I. Lies: Understanding Hallucinations 🤥
+
+**What is an AI hallucination?**  
+AI hallucinations occur when models confidently generate plausible yet **false or fabricated information**. This includes making up facts, citations, or entire stories that sound credible but are inaccurate or entirely invented [@OpenAI2025].
+
+**Causes**  
+Hallucinations arise due to:  
+  - The **probabilistic nature** of language generation models rewarded to guess probable next words, even with limited data [@Özer2024].  
+  - **Contradictions and inconsistencies** in large, unstructured training datasets causing tension and errors during generation [@Reid2025].  
+  - Limitations in model design, decoding strategies, and insufficient grounding in factual sources [@Kalai2025].
+
+**Different types**  
+Intrinsic hallucinations directly contradict source or context inputs; Extrinsic hallucinations fabricate unverifiable or fictional content [@Özer2024].
+
+**Impact**  
+Hallucinations pose serious risks in research, healthcare, law, and public knowledge domains—spreading misinformation, eroding trust, and causing real-world harm if unchecked [@Reid2025].
+
+**Ongoing challenges**  
+Despite advances, hallucinations remain a stubborn problem due to opaque training processes and limited traceability of AI reasoning [@Raila2025].
+
+### Key References
+
+- Özer, M. (2024). Is Artificial Intelligence Hallucinating? *PMC*.  
+- Reid, J. (2025). New sources of inaccuracy? A conceptual framework for studying AI hallucinations. *Misinformation Review*.  
+- Kalai, A. T., & Vempala, S. (2025). Why Language Models Hallucinate. *arXiv preprint*.  
+- OpenAI. (2025). Why language models hallucinate. *OpenAI Blog*.  
+- Raila, G. (2025). A.I. Is Getting More Powerful, but Its Hallucinations Are Increasing. *New York Times*.
+
 
 # OpenWebUI at a Glance
 
@@ -84,7 +208,7 @@ footer: Tutorial on a.i Usage
 :::
 
 ::: column
-![Screenshot placeholder](assets/images/openwebui-interface.png){width=90% fig-align=center}
+![OpenWebUI](assets/images/openwebui-interface.png){width=90% fig-align=center}
 :::
 :::
 
@@ -127,8 +251,6 @@ Spot what’s wrong with LogiBot’s “bad” answers and suggest better prompt
 Just ship everything by drone tomorrow.  
 If that fails, tell customers to switch to tea instead."*  
 
----
-
 ::: callout-warning
 ⚠️ What’s wrong here?
 - Unrealistic solution (no evidence or feasibility).  
@@ -143,22 +265,61 @@ Ask a **specific, realistic prompt**:
 :::
 
 
-## Prompting Basics
+## Prompting Guide for Logistics & Sustainability Research
 
-### ✅ Do
-- Be **specific**: “Summarize in 150 words with 3 key findings.”  
-- Add **structure**: request bullets, tables, or sections.  
-- Provide **context**: mention the type of document or task.  
-- Ask for **quotes or references** to support claims.  
+You are a researcher in **logistics or sustainability**. Use the CARE method: **Context, Ask, Rules, Examples**.
 
-### ❌ Common Mistakes
-- Being too **vague or ambiguous** (“Improve logistics” → too broad).  
-- Ignoring **role/context** (e.g. ask AI to act as a reviewer or analyst).  
-- Asking for **opinions** instead of **evidence-based answers**.  
+### ✅ Effective Prompt Template
+- **Role**: you are a [logistics/sustainability] researcher  
+- **Context**: include document/case study + goals (reduce emissions, improve routing, improve resilience)  
+- **Ask**: what you want precisely (summary, comparison, scenario analysis, forecasting)  
+- **Rules**: format, length, evidence, trade-offs required  
 
-::: callout-tip
-Think of prompting as writing a **research question**: clear, scoped, and answerable.  
+### 🔍 Sample Prompts
+
+::: {.panel-tabset}
+
+### Cost-Efficiency with Green Goals
+- **Bad:** “Lower costs in supply chain.”  
+- **Good:** “You are a sustainability researcher. Given the attached logistics case study, suggest **3 cost-reduction strategies** that also **reduce carbon emissions**. Show trade-offs in cost vs emissions, with actionable steps.”
+
+### Forecast Emissions Scenario
+- **Bad:** “Forecast emissions next quarter.”  
+- **Good:** “Using last year’s transport data (distance, fuel type), forecast CO₂ emissions for the next quarter under two scenarios: (1) current operations, (2) optimized routing + low-emission vehicles. State assumptions clearly.”
+
+### Resilience Analysis
+- **Bad:** “Improve supply chain resilience.”  
+- **Good:** “Given a case of port disruption and fuel price increase, compare **two mitigation strategies** in terms of sustainability (emissions), cost, and lead time. Be specific and use evidence from the attached report.”
+
 :::
+
+
+## Level Up — Context Engineering
+
+**Make your AI work smarter by structuring what it *knows* before asking it to act.**
+
+### ✅ Best Practices (sources: PromptingGuide, OpenAI Best Practices)  
+- Use **clear system/instruction context** first (instructions + what data or examples the AI should reference).  
+- Include relevant examples of good output so AI “knows what success looks like.”  
+- Define constraints: format, length, style, evidence rules.   
+- Avoid irrelevant or excessive context that may confuse the model.  
+
+### 🛠 How to Try This in OpenWebUI
+
+- Before a task, upload or paste metadata/documents + a small set of sample good outputs.  
+- Use prompts like:
+
+  > “Context: [metadata, document titles, sample outputs]  
+  > Task: Summarize the following document in 150-words, include 3 findings and 2 quotes.  
+  > Format: bullets + quotes with section labels.”
+
+- Review output vs. context → adjust rules/examples as needed.  
+
+### ⚠ Common Pitfalls
+
+- Overloading the AI with context (too much, irrelevant); clutters focus. 
+- Forgetting to supply examples → model guesses format or content. 
+- Not iterating: using output without refining context when results are weak.  
 
 
 ## Task 1 — Summarization
@@ -197,7 +358,7 @@ Steps:
 - Ask for **quotes or references to sections** where possible.  
 :::
 
-## Task 3 — Structuring Notes into a Table
+## Task 3 Structuring Notes into a Table
 
 **Goal:** Turn unstructured research notes into a clear, reusable format.  
 
@@ -219,7 +380,7 @@ Steps:
 - Mark missing info as *unknown* — don’t allow invention.  
 :::
 
-## Task 4 — Drafting (First Pass)
+## Task 4 Drafting (First Pass)
 
 **Goal:** Use AI to create a draft section, while staying evidence-based.  
 
@@ -267,6 +428,85 @@ Its value depends on **your critical review**.
 Use AI to **assist** research, not to bypass critical thinking, originality, or ethical standards.  
 :::
 
+## Case Study — AI in Supply Chains: Amazon's Edge 🚀
+
+**Demand Forecasting Mastery**  
+AI-driven models predict demand for over 400 million products daily, considering real-time sales, seasonal trends, and competitor pricing to optimize inventory levels and reduce stockouts.
+
+**Robotics-Driven Fulfilment**  
+Autonomous robots transport shelves to pickers, increasing warehouse picking speed by 50% and ensuring 99.99% order accuracy.
+
+**Smart Routing Algorithms**  
+Dynamic routing optimizes last-mile delivery by factoring in traffic, weather, and package constraints, speeding delivery times by 30%.
+
+**Sustainability Boost**  
+AI optimizes packaging design to use less material, reducing waste and cost.
+
+![Amazon Logistics AI](https://docshipper.com/wp-content/uploads/2025/07/AI_logistics_supply_chain.jpeg){fig-align="center" width="80%"}
+
+> **Outcome:** Over $1 billion annual savings, 65% fewer stockouts, and logistics transformed into a competitive advantage.
+
+::: callout-tip
+Amazon's blend of AI technologies across forecasting, robotics, routing, and packaging makes it a gold standard in supply chain AI innovation.
+:::
+
+
+## Case Study — DHL and Coca-Cola: Logistics & Demand Forecasting 📦📊
+
+**DHL’s AI-Optimized Global Freight Management**  
+DHL uses AI-powered analytics to monitor over 13 million shipments daily, dynamically rerouting to reduce delays by 35% and saving €45 million annually. AI predicts disruptions from weather, traffic, and geopolitical events—letting teams act before issues escalate.
+
+**Coca-Cola’s Hyper-Local Demand Forecasting**  
+AI models ingest sales data, weather, social media trends, and promotions across 200+ countries to create precise, hyper-local demand forecasts. This reduces stockouts, waste, and aligns production with real-time consumer behavior.
+
+**Transforming Operations**  
+Both companies moved from reactive problem solving to predictive management, boosting resiliency and customer satisfaction globally.
+
+![DHL Logistics AI](https://www.dhl.com/content/dam/downloads/g0/about_us/logistics_insights/stories/robotics-ai_hero.jpg){fig-align="center" width="70%"}
+
+::: callout-tip
+DHL and Coca-Cola’s AI-driven agility showcases how real-time analytics can revolutionize supply chains under pressure while cutting costs and waste.
+:::
+
+
+## Case Study — Walmart & Zara: Inventory and Customer-Centric AI 🛒👗
+
+**Walmart’s Data-Driven Inventory Mastery**  
+Across 4,700 stores, Walmart harnesses AI models analyzing customer demand, supply signals, and promotions to reduce inventory costs by $1.5 billion annually while maintaining an impressive 99.2% in-stock rate. This precision prevents overstock and stockouts, balancing costs and availability.
+
+**Zara’s Fast Fashion AI Adaptation**  
+Zara applies AI to analyze real-time sales and online trends, dynamically adjusting inventory by store location and customer preferences. This agility reduces markdowns and improves sell-through rates in the fast-paced fashion market.
+
+**Competitive Edge through Responsiveness**  
+AI enables both retailers to quickly align supply with customer behavior, reducing waste and boosting revenue.
+
+![Walmart and Zara Inventory AI](https://cdn.smartcompany.com.au/wp-content/uploads/2025/02/Walmart-warehouse-RFID-robots-2025.jpg){fig-align="center" width="75%"}
+
+::: callout-tip
+Walmart and Zara’s AI-powered inventory strategies combine data science with rapid responsiveness, setting new industry standards in retail supply chains.
+:::
+
+
+## Case Study — Maersk & UPS: Risk Mitigation and Sustainable Routing 🚢🚚
+
+**Maersk’s AI-Powered Maritime Logistics**  
+Maersk processes over 2 billion IoT data points daily across 700+ vessels, using AI-enabled predictive maintenance to reduce downtime by 30%, saving $300M annually and cutting 1.5 million tons of CO₂ emissions.
+
+**UPS’s ORION Route Optimization**  
+UPS's AI routing system optimizes delivery paths in real-time, performing 30,000 calculations per minute to save millions of gallons of fuel and reduce carbon emissions by 100,000 metric tons yearly.
+
+**Sustainability Meets Efficiency**  
+Integrating real-time data and AI analytics, both companies transformed logistics from reactive operations to proactive, sustainable, and cost-saving processes.
+
+![Sustainable AI Logistics](https://cdn.supplychain247.com/files/public/1c59c209-4f0b-4caa-9c77-3c733b4dbcfa/UPS_terminal_warehouse.jpg){fig-align="center" width="75%"}
+
+::: callout-tip
+Maersk and UPS exemplify how AI logistics innovation delivers substantial environmental impact alongside cost savings — a blueprint for future supply chains.
+:::
+
+
+
+
 ## Case Study — AI in Supply Chains
 
 ### 🚀 Amazon
@@ -296,8 +536,6 @@ Today, you’ll see how **OpenWebUI** can bring similar capabilities to your res
 - Extracts **key findings & methods** into a Markdown table  
 - Researcher cross-checks, then builds a review outline in 1 hour  
 - Time saved: days of manual note-taking  
-
----
 
 ### 🧪 Data Exploration
 - Researcher pastes raw survey results  
