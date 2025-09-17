@@ -1,0 +1,407 @@
+---
+title: Markdown, Pandoc and Quarto
+subtitle: a modern ecosystem for typesetting and publishing
+
+author:
+  - name: Christiaan Verhoef
+    email: cg.verhoef@windesheim.nl
+    url: https://valuechainhackers.xyz
+    affiliation: Supplychain Finance at Hogeschool Windesheim
+    affiliation-url: 
+    orcid: 0000-1111-2222-3333
+
+bibliography: references.bib
+csl: assets/frontiers.csl
+
+qrcode: https://miro.com/app/board/uXjVLdW3-ak=/?share_link_id=295216251657
+
+footer: Tutorial on a.i Usage 
+---
+
+# Welcome
+
+- 👋 **Workshop 1: AI in Research**  
+- 🎯 Goal: explore how AI can support your research process  
+- 🛡️ Environment: OpenWebUI — a safe, private workspace prepared for you  
+- 📚 Focus: using AI for summarization, exploration, and reporting  
+- 🚀 Outcome: leave with a **repeatable workflow** for applying AI in your own projects  
+
+
+# Agenda
+
+::: columns
+::: column
+1. **Introduction**  
+2. **What** – Quarto & OpenWebUI essentials  
+3. **How** – Hands-on practice  
+:::
+
+::: column
+4. **Tools** – VCH research stack  
+5. **Roles** – Students, faculty, partners  
+6. **Flow** – 8-step Theory U journey  
+7. **Summary** – Key takeaways  
+:::
+:::
+
+
+# Introduction
+
+::: callout-note
+### 🌍 Why this workshop?
+
+- 🤖 AI is reshaping how research is done.  
+- 🎓 Students & researchers need **practical, reproducible methods**.  
+- 🛠️ Quarto + OpenWebUI provide structure for transparent workflows.  
+:::
+
+::: callout-tip
+### 🎯 Learning outcomes
+
+- 📚 Understand the role of AI in academic research.  
+- 💻 Hands-on practice with **Quarto** slides & documents.  
+- 🔍 Apply **OpenWebUI** for summarization, exploration & reporting.  
+:::
+
+# What is OpenWebUI?
+
+- 💬 A simple, researcher-friendly interface for AI  
+- 🛡️ Runs in a **controlled, private environment** — your safe space  
+- 📂 Upload documents (PDFs, text, images) for analysis  
+- ⚡ Works with both local and online AI models  
+- 🎯 Goal: make AI **accessible, reproducible, and reliable** for research  
+
+# OpenWebUI at a Glance
+
+::: columns
+::: column
+### 🔑 Key Features
+- Chat interface for prompts & replies  
+- Upload panel for research files  
+- History of past sessions  
+- Model selector (choose local or cloud models)  
+- Extensions & tools (optional extras)  
+:::
+
+::: column
+![Screenshot placeholder](assets/images/openwebui-interface.png){width=90% fig-align=center}
+:::
+:::
+
+# First Task
+
+- 📝 Type a simple research question into OpenWebUI:  
+  *“Summarize the key challenges in supply chain finance.”*  
+
+- 🎯 Observe the response:  
+  - How clear is it?  
+  - What’s useful?  
+  - What’s missing?  
+
+::: callout-tip
+**Remember:** This is your *assistant*, not an oracle.  
+You control the process.  
+:::
+
+## Icebreaker — LogiBot Gone Rogue 🤖
+
+You’re the logistics manager for a global coffee company.  
+☕ Millions depend on you for their morning brew.  
+
+But disaster strikes:  
+- 🚢 A major European port is on strike.  
+- 📦 Shipments are stuck.  
+- 😱 Customers in Asia are furious.  
+
+And worst of all... your shiny new AI assistant **LogiBot** has gone rogue!  
+Instead of solutions, it spits out the **worst possible ideas**.  
+
+::: callout-note
+**Your challenge:**  
+Spot what’s wrong with LogiBot’s “bad” answers and suggest better prompts.  
+:::
+
+## LogiBot’s Answer ❌
+
+*"Don’t worry about the strike.  
+Just ship everything by drone tomorrow.  
+If that fails, tell customers to switch to tea instead."*  
+
+---
+
+::: callout-warning
+⚠️ What’s wrong here?
+- Unrealistic solution (no evidence or feasibility).  
+- Ignores the actual problem (port strike).  
+- No context from supply chain data.  
+:::
+
+::: callout-tip
+💡 How to fix it:  
+Ask a **specific, realistic prompt**:  
+*“Given a port strike in Europe, what alternative transport routes could maintain supply to Asia?”*  
+:::
+
+
+## Prompting Basics
+
+### ✅ Do
+- Be **specific**: “Summarize in 150 words with 3 key findings.”  
+- Add **structure**: request bullets, tables, or sections.  
+- Provide **context**: mention the type of document or task.  
+- Ask for **quotes or references** to support claims.  
+
+### ❌ Common Mistakes
+- Being too **vague or ambiguous** (“Improve logistics” → too broad).  
+- Ignoring **role/context** (e.g. ask AI to act as a reviewer or analyst).  
+- Asking for **opinions** instead of **evidence-based answers**.  
+
+::: callout-tip
+Think of prompting as writing a **research question**: clear, scoped, and answerable.  
+:::
+
+
+## Task 1 — Summarization
+
+**Goal:** Create a clear, concise summary of a research abstract.
+
+Steps:  
+1. 📂 Upload a research abstract (PDF or text).  
+2. 💬 Ask OpenWebUI: *“Summarize this abstract in 150 words.”*  
+3. 🔎 Review the result — does it capture the main question, method, and findings?  
+
+::: callout-tip
+**Good practice:**  
+- Keep the summary **short (120–150 words)**.  
+- Include **3–5 key points** only.  
+- If info is missing, mark it as *unknown* — don’t invent.  
+:::
+
+## Task 2 — Exploration
+
+**Goal:** Ask deeper questions about a research document.  
+
+Steps:  
+1. 📂 Upload a paper or report.  
+2. ❓ Ask OpenWebUI targeted questions, for example:  
+   - *“What is the main research question and why does it matter?”*  
+   - *“List the datasets and methods used.”*  
+   - *“Summarize 3 key findings with evidence.”*  
+   - *“What assumptions or limitations are mentioned?”*  
+3. 🔎 Compare the answers with the text to check accuracy.  
+
+::: callout-tip
+**Good practice:**  
+- Use **specific, structured prompts** (not just “Explain this”).  
+- Always verify the AI’s response against the source.  
+- Ask for **quotes or references to sections** where possible.  
+:::
+
+## Task 3 — Structuring Notes into a Table
+
+**Goal:** Turn unstructured research notes into a clear, reusable format.  
+
+Steps:  
+1. 📂 Upload your notes or a research document.  
+2. 💬 Ask OpenWebUI:  
+   *“Organize the key concepts into a table with definition, evidence, and open questions.”*  
+3. 📊 Review the table — is it faithful to the source? Are quotes properly cited?  
+
+**Target structure:**  
+
+| Concept | Definition | Evidence (quote) | Section/Page | Open Questions |
+|---------|------------|------------------|--------------|----------------|
+
+::: callout-tip
+**Good practice:**  
+- Always ask for a **Markdown table** (easy to copy into your report).  
+- Keep quotes short (≤25 words).  
+- Mark missing info as *unknown* — don’t allow invention.  
+:::
+
+## Task 4 — Drafting (First Pass)
+
+**Goal:** Use AI to create a draft section, while staying evidence-based.  
+
+Steps:  
+1. 📂 Upload your paper or notes.  
+2. 💬 Ask OpenWebUI:  
+   *“Draft a 150–200 word abstract using only the uploaded document(s). Include background, objective, methods, results, and limitations.”*  
+3. 📝 Review the draft carefully:  
+   - Are all claims supported by the source?  
+   - Are limitations included?  
+   - Are there placeholders for citations?  
+
+::: callout-tip
+**Good practice:**  
+- Use AI drafts as a **starting point**, never the final product.  
+- Insert **[Author, Year]** placeholders for citations.  
+- Remove or flag anything that isn’t clearly supported by evidence.  
+:::
+
+
+## Limitations of AI in Research
+
+- ⚠️ **Hallucinations** — AI may invent facts or references  
+- 📉 **Context limits** — large documents can exceed model capacity  
+- 🎭 **Bias** — reflects patterns (and errors) in training data  
+- 🔄 **No true understanding** — outputs are predictions, not reasoning  
+- 🕵️ **Verification required** — every claim must be checked  
+
+::: callout-note
+**Remember:**  
+AI is a **research assistant**, not an authority.  
+Its value depends on **your critical review**.  
+:::
+
+
+## Ethics & Privacy
+
+- 🔒 **Confidentiality** — never upload sensitive or unpublished data to public AI systems  
+- 🛡️ **Safe space** — OpenWebUI keeps your work private and under your control  
+- ⚖️ **Fair use** — cite properly, don’t let AI replace academic integrity  
+- 🤝 **Responsible use** — AI supports your work, but you remain accountable  
+
+::: callout-tip
+**Best practice:**  
+Use AI to **assist** research, not to bypass critical thinking, originality, or ethical standards.  
+:::
+
+## Case Study — AI in Supply Chains
+
+### 🚀 Amazon
+- **Demand Forecasting**: predicts demand for 400M+ products daily  
+- **Robotics**: autonomous robots streamline warehouse operations  
+- **Smart Routing**: routes optimized by traffic, weather, and delivery windows  
+- **Sustainability**: packaging engine reduces waste  
+
+---
+
+### 📊 Procter & Gamble
+- Used AI to analyze **real-time supplier, port, and weather data**  
+- Predicted delays and **rerouted shipments** during the pandemic  
+- Maintained supply when competitors faced shortages  
+- Outcome: **customer trust + higher profits**  
+
+::: callout-tip
+These global examples show how **AI supports resilience and decision-making**.  
+Today, you’ll see how **OpenWebUI** can bring similar capabilities to your research.  
+:::
+
+## Case Study — AI in Research
+
+### 🎓 Literature Review
+- Researcher uploads 10 PDFs into OpenWebUI  
+- AI generates a **summary of each paper** (150 words)  
+- Extracts **key findings & methods** into a Markdown table  
+- Researcher cross-checks, then builds a review outline in 1 hour  
+- Time saved: days of manual note-taking  
+
+---
+
+### 🧪 Data Exploration
+- Researcher pastes raw survey results  
+- AI suggests **themes, variables, and visualizations**  
+- Drafts clear explanations for a report section  
+- Researcher validates with real analysis tools (R/Python)  
+
+::: callout-tip
+AI doesn’t replace critical thinking — it **accelerates the routine work** so you can focus on insights.  
+:::
+
+
+
+## Application: Literature Review
+
+**Goal:** speed up understanding of large sets of papers.  
+
+How AI helps:  
+- 📚 **Summarize** abstracts and introductions quickly  
+- 🔍 **Compare** methods and findings across multiple studies  
+- 🗂️ **Organize** results into tables or themes  
+- 📝 **Draft** preliminary review notes for discussion  
+
+::: callout-tip
+**Good practice:**  
+Always verify summaries against the original texts and keep track of exact references.  
+:::
+
+
+
+## Application: Data Support
+
+**Goal:** use AI to clarify and communicate research data.  
+
+How AI helps:  
+- 📊 **Explain** variables, methods, and outputs in plain language  
+- 📈 **Suggest** possible visualizations (charts, plots)  
+- 🧮 **Check** calculations or provide simple code snippets  
+- 🗂️ **Document** steps clearly for reproducibility  
+
+::: callout-tip
+**Good practice:**  
+Always run data analysis in your own trusted tools (R, Python, Excel).  
+Use AI for **supporting explanations** — not as the primary analysis engine.  
+:::
+
+## Application: Collaboration
+
+**Goal:** make teamwork in research more efficient.  
+
+How AI helps:  
+- 📝 **Draft shared notes** after meetings or workshops  
+- 📑 **Summarize** long email threads or documents for the group  
+- 🔄 **Translate** text for international collaborators  
+- 🎯 **Highlight action points** to keep teams aligned  
+
+::: callout-tip
+**Good practice:**  
+Use AI to reduce **administrative overhead**,  
+so teams can focus on **analysis, discussion, and decision-making**.  
+:::
+
+## Why OpenWebUI at VCH?
+
+- 🛡️ **Safe space** — private, controlled environment for research  
+- 🎓 **Prepared for you** — tools, models, and settings already configured  
+- 🔍 **Focused** — no distractions from commercial platforms  
+- 🤝 **Community-driven** — built to support collaboration between students, faculty, and partners  
+
+::: callout-note
+At VCH, OpenWebUI is more than a tool —  
+it’s a **trusted workspace** where researchers can safely explore AI.  
+:::
+
+## The Research Journey (Theory U)
+
+VCH uses an **8-step process** to guide research projects:  
+
+1. 🧭 Problem identification & stakeholder mapping  
+2. 📊 Data collection & preliminary analysis  
+3. 💡 Solution ideation & prioritisation  
+4. 🗣️ Validation through stakeholder feedback  
+5. 📝 Proposal development & presentation (MVP)  
+6. 🌍 Community engagement & commitment-building  
+7. 🔄 Solution testing & iterative realization  
+8. 🚀 Scaling & broader implementation planning  
+
+::: callout-tip
+**Key idea:**  
+AI supports you at **every step** — from framing the problem to scaling solutions.  
+:::
+
+## Summary
+
+- 🤖 AI can support research through **summarization, exploration, structuring, and drafting**  
+- 🛡️ OpenWebUI offers a **safe, private environment** prepared for you  
+- 🧰 Practical tasks showed how AI fits into your daily workflow  
+- ⚖️ Limitations and ethics remain critical — **you are always in control**  
+- 🎯 Outcome: confidence in using AI as a **research assistant**, not a replacement  
+
+## Next Steps
+
+- 📝 Apply what you learned in your own research projects  
+- 📂 Use OpenWebUI to explore, summarize, and structure your materials  
+- 🤝 Share insights with peers and supervisors for feedback  
+- 🚀 Build confidence through practice — start small, then scale  
+- 🌍 Remember: AI is a **tool to support you**, not a substitute for your expertise  

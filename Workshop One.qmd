@@ -1,0 +1,43 @@
+---
+title: "Workshop 1"
+author: "C.G Verhoef"
+format: 
+  revealjs:
+    theme: styles/theme.scss
+---
+cc
+aa
+:::{.absolute top-right}
+<img src="assets/images/logo-vch.png" alt="VCH" style="width:110px; opacity:.9;"/>
+:::
+
+## Welcome
+
+- What we’ll do  
+  - Quarto slides: structure, chunks, formatting  
+  - R/Python chunks that actually run  
+  - Best practices for reproducible workshops
+
+::: notes
+Press **S** for speaker view. Use **quarto preview Workshop1.qmd** during authoring.
+:::
+
+---
+
+## Quarto (what & why)
+
+- One source → slides, reports, websites  
+- Reproducible: code + output travel together  
+- Runs R or Python (same file), engine auto-detected
+
+> Docs later: `Help → Open Quarto Docs` in RStudio or VSCode extension.
+
+---
+
+## Render / Preview (exact commands)
+
+```bash
+# in project root
+quarto preview Workshop1.qmd   # live reload while editing
+# when happy:
+quarto render Workshop1.qmd
