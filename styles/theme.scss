@@ -1,0 +1,9 @@
+/*-- scss:defaults --*/
+$body-bg: #ffffff;
+$body-color: #000000;
+$link-color: #007ACC;
+
+/*-- scss:rules --*/
+.reveal h1, .reveal h2, .reveal h3 {
+  color: $link-color;
+}

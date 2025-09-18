@@ -1,0 +1,103 @@
+// fonts
+$font-family-sans-serif: Roboto , 'open sans', Arial, Helvetica, serif !default;
+$presentation-font-size-root: 28px;
+
+// colors
+$body-bg: #fff !default;
+$body-color: #000 !default;
+$link-color: #0c6730 !default;
+$selection-bg: #26351c !default;
+$code-color: #0c6730;
+$code-bg: #fff;
+
+// headings
+$presentation-heading-font: Roboto , 'open sans', Arial, Helvetica, serif !default;
+$presentation-heading-color: #383d3d !default;
+$presentation-h1-font-size:	1.5em;
+
+// code blocks
+$code-block-font-size: 0.8em;
+$code-block-border-left: black;
+
+
+/*-- scss:rules --*/
+
+// Title page
+.reveal .title {
+    padding-top: 5em;
+    font-size: 1.6em;
+}
+.reveal .subtitle {
+    padding-top: 1em;
+    font-size: 1.3em;
+}
+
+.quarto-title-author-name {
+    padding-top: 1em;
+    font-size: 1.2em;
+}
+.quarto-title-author-email{
+    padding-top: 1em;
+    font-size: 1.2em;
+}
+.quarto-title-affiliation{
+    font-size: 1.2em;
+}
+
+// Callouts
+.reveal .callout-title > p{
+    font-size: 1.2em;
+}
+.reveal .callout-content {
+    font-size: 1.2em;
+}
+
+
+// Code
+.reveal pre.sourceCode code {
+    /* height: 500px; */
+    max-height: 1000px;
+}
+  
+// References
+.reveal .csl-entry {
+    font-size: 1.3em;
+    padding-top: 0.5em;
+
+}
+
+// Logo
+.reveal .slide-logo {
+  display: block;
+  position: fixed;
+  bottom: unset !important;
+  right: unset !important;
+  top: 5px;
+  left: 5px;
+  height: 200px !important;
+  width: 250x !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+
+// Cursor
+.cursor-dot,.cursor-dot-outline{
+    pointer-events:none;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius:50%;
+    opacity:0;
+    transform:translate(-50%,-50%);
+    transition:opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+.cursor-dot{
+    width:32px;
+    height:32px;
+    background-color:red;
+    z-index:1;
+}
+.no-cursor{cursor:none;}
+.no-cursor a,.no-cursor div,.no-cursor span{cursor:none;}

@@ -1,0 +1,73 @@
+/* === Fonts (local) === */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Phudu";
+  src: url("../assets/fonts/Phudu-SemiBold.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Phudu";
+  src: url("../assets/fonts/Phudu-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* === Color tokens (adjust as you like) === */
+:root {
+  --vch-bg: #0b0f14;        /* deep slate */
+  --vch-text: #e7ecf2;      /* warm off-white */
+  --vch-accent: #3bd3a7;    /* teal-green */
+  --vch-accent-2: #9b87f5;  /* soft violet */
+  --vch-muted: #728197;
+}
+
+.reveal {
+  background: var(--vch-bg);
+  color: var(--vch-text);
+  font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+
+  h1, h2, h3 {
+    font-family: "Phudu", "DM Sans", sans-serif;
+    letter-spacing: .3px;
+  }
+  a { color: var(--vch-accent); }
+  strong, b { color: var(--vch-accent-2); }
+  blockquote {
+    border-left: 4px solid var(--vch-accent);
+    color: var(--vch-text);
+    opacity: .95;
+  }
+  .slide-logo {
+    position: fixed; right: 20px; bottom: 18px; width: 110px; opacity: .9;
+  }
+}
+
+/* code blocks */
+.reveal pre code {
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+/* callouts look cleaner on dark */
+div.callout {
+  background: rgba(255,255,255,.04);
+  border-left: 4px solid var(--vch-accent);
+}
+
+/* tables */
+.reveal table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.reveal table th, .reveal table td {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: .4rem .6rem;
+}
