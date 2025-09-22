@@ -1,6 +1,6 @@
 # Presentation template using Quarto
 
-Basic structure to create simple HTML presentations using Quarto, based on Pandoc's markdown and reveal.js. 
+
 
 Check the doc at <https://quarto.org/> and simply install Quarto.
 
