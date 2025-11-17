@@ -1,0 +1,1069 @@
+---
+title: Neo4j Supply Chain Tracking
+subtitle: Building Graph Databases for Supply Chain Transparency
+
+author:
+  - name: Christiaan Verhoef
+    email: cg.verhoef@windesheim.nl
+    url: https://valuechainhackers.xyz
+    affiliation: Supplychain Finance at Hogeschool Windesheim
+    affiliation-url:
+    orcid: 0000-1111-2222-3333
+
+footer: Tutorial on Neo4j Supply Chain Tracking
+---
+
+# Welcome
+
+- 👋 **Workshop: Neo4j for Supply Chain Transparency**
+- 🎯 Goal: Learn how to model and query multi-tier supply chains using graph databases
+- 🛠️ Environment: Neo4j — the leading graph database platform
+- 📚 Focus: Creating nodes, relationships, and querying product origins
+- 🚀 Outcome: Build a working supply chain tracking system
+
+# Why Graph Databases for Supply Chains?
+
+::: columns
+::: column
+### 🔗 Natural Fit
+- Supply chains are **networks**, not tables
+- Relationships matter as much as entities
+- Multi-hop queries (supplier's supplier's supplier)
+- Dynamic and flexible structure
+:::
+
+::: column
+### 💡 Benefits
+- **Trace product origins** in milliseconds
+- **Identify risks** across supply tiers
+- **Find alternative suppliers** instantly
+- **Visualize** complex relationships
+:::
+:::
+
+::: callout-note
+Traditional databases struggle with "Who supplies my supplier?" questions.
+Graph databases make these queries **natural and fast**.
+:::
+
+# Agenda
+
+1. **Introduction** — Why Neo4j for supply chains?
+2. **Data Model** — Nodes and relationships
+3. **Setup** — Connecting to Neo4j
+4. **Building** — Creating the supply chain
+5. **Querying** — Tracing product origins
+6. **Advanced** — Analytics and insights
+7. **Practice** — Hands-on exercises
+
+# The Supply Chain Data Model
+
+### 🏗️ Node Types
+
+We'll create four types of nodes:
+
+- **Product** — Final goods sold to customers
+- **Component** — Parts that make up products
+- **RawMaterial** — Base materials
+- **Supplier** — Companies in the supply chain
+
+### 🔗 Relationship Types
+
+- **CONTAINS** — Product contains Component
+- **MADE_FROM** — Component made from RawMaterial
+- **SUPPLIED_BY** — Links items to their Suppliers
+- **SOURCES_FROM** — Supplier sources from another Supplier
+
+# Example: Coffee Supply Chain
+
+```
+[Customer]
+    ↓
+[Product: Roasted Coffee Bag]
+    ↓ CONTAINS
+[Component: Coffee Beans]
+    ↓ SUPPLIED_BY
+[Supplier: Regional Distributor]
+    ↓ SOURCES_FROM
+[Supplier: Coffee Farm Cooperative]
+    ↓ SUPPLIED_BY
+[RawMaterial: Green Coffee Cherries]
+```
+
+::: callout-tip
+This multi-tier structure lets us trace **any product back to its raw material sources**.
+:::
+
+# Setting Up Neo4j
+
+### 🚀 Quick Start Options
+
+1. **Neo4j Desktop** (recommended for local development)
+2. **Neo4j Aura** (cloud-based, free tier available)
+3. **Docker** — `docker run -p 7474:7474 -p 7687:7687 neo4j`
+
+### 📝 Connection Details
+
+- **Browser Interface**: `http://localhost:7474`
+- **Bolt Protocol**: `bolt://localhost:7687`
+- **Default credentials**: `neo4j` / `neo4j` (change on first login)
+
+::: callout-warning
+Make sure Neo4j is running before proceeding!
+Test by opening the browser interface.
+:::
+
+# Clearing the Database
+
+Before we start, let's ensure a clean slate:
+
+```cypher
+// Delete all existing nodes and relationships
+MATCH (n)
+DETACH DELETE n;
+
+// Verify the database is empty
+MATCH (n)
+RETURN count(n) as nodeCount;
+```
+
+::: callout-note
+**DETACH DELETE** removes nodes and all their relationships.
+Always be careful with this command in production!
+:::
+
+# Creating Our Supply Chain: Products
+
+Let's create a realistic electronics product — a smartphone:
+
+```cypher
+// Create the final product
+CREATE (p:Product {
+  id: 'PROD-001',
+  name: 'SmartPhone X Pro',
+  category: 'Electronics',
+  price: 899.99,
+  manufacturer: 'TechCorp Inc',
+  country: 'USA'
+})
+RETURN p;
+```
+
+### 🎯 Node Properties
+
+- **id**: Unique identifier
+- **name**: Product name
+- **category**: Product classification
+- **price**: Retail price
+- **manufacturer**: Company producing the final product
+- **country**: Country of final assembly
+
+# Creating Components
+
+A smartphone contains many components:
+
+```cypher
+// Create main components
+CREATE (screen:Component {
+  id: 'COMP-001',
+  name: 'OLED Display 6.7"',
+  type: 'Display',
+  specifications: 'HDR, 120Hz'
+}),
+(battery:Component {
+  id: 'COMP-002',
+  name: 'Lithium Battery 5000mAh',
+  type: 'Power',
+  specifications: 'Fast charging'
+}),
+(processor:Component {
+  id: 'COMP-003',
+  name: 'Octa-Core Processor',
+  type: 'CPU',
+  specifications: '3.2GHz, 5nm'
+}),
+(camera:Component {
+  id: 'COMP-004',
+  name: 'Triple Camera Module',
+  type: 'Optics',
+  specifications: '108MP main + 12MP ultra-wide + 10MP telephoto'
+}),
+(casing:Component {
+  id: 'COMP-005',
+  name: 'Aluminum Casing',
+  type: 'Housing',
+  specifications: 'Aerospace-grade aluminum'
+})
+RETURN screen, battery, processor, camera, casing;
+```
+
+# Linking Products to Components
+
+Now connect the product to its components:
+
+```cypher
+// Link product to components
+MATCH (p:Product {id: 'PROD-001'})
+MATCH (screen:Component {id: 'COMP-001'})
+MATCH (battery:Component {id: 'COMP-002'})
+MATCH (processor:Component {id: 'COMP-003'})
+MATCH (camera:Component {id: 'COMP-004'})
+MATCH (casing:Component {id: 'COMP-005'})
+
+CREATE (p)-[:CONTAINS {quantity: 1, critical: true}]->(screen),
+       (p)-[:CONTAINS {quantity: 1, critical: true}]->(battery),
+       (p)-[:CONTAINS {quantity: 1, critical: true}]->(processor),
+       (p)-[:CONTAINS {quantity: 1, critical: false}]->(camera),
+       (p)-[:CONTAINS {quantity: 1, critical: false}]->(casing)
+
+RETURN p, screen, battery, processor, camera, casing;
+```
+
+::: callout-tip
+Relationship properties like **quantity** and **critical** help track important supply chain details.
+:::
+
+# Creating Tier-1 Suppliers
+
+Components come from direct suppliers:
+
+```cypher
+// Create Tier-1 suppliers (direct component suppliers)
+CREATE (s1:Supplier {
+  id: 'SUP-001',
+  name: 'DisplayTech Korea',
+  tier: 1,
+  country: 'South Korea',
+  specialty: 'OLED Displays',
+  certifications: ['ISO 9001', 'ISO 14001']
+}),
+(s2:Supplier {
+  id: 'SUP-002',
+  name: 'PowerCell China',
+  tier: 1,
+  country: 'China',
+  specialty: 'Battery Manufacturing',
+  certifications: ['ISO 9001', 'UL']
+}),
+(s3:Supplier {
+  id: 'SUP-003',
+  name: 'ChipMakers Taiwan',
+  tier: 1,
+  country: 'Taiwan',
+  specialty: 'Semiconductor Fabrication',
+  certifications: ['ISO 9001', 'IATF 16949']
+}),
+(s4:Supplier {
+  id: 'SUP-004',
+  name: 'OpticsPro Germany',
+  tier: 1,
+  country: 'Germany',
+  specialty: 'Camera Modules',
+  certifications: ['ISO 9001']
+}),
+(s5:Supplier {
+  id: 'SUP-005',
+  name: 'MetalWorks USA',
+  tier: 1,
+  country: 'USA',
+  specialty: 'Aluminum Processing',
+  certifications: ['ISO 9001', 'AS9100']
+})
+RETURN s1, s2, s3, s4, s5;
+```
+
+# Linking Components to Tier-1 Suppliers
+
+```cypher
+// Link components to their suppliers
+MATCH (screen:Component {id: 'COMP-001'})
+MATCH (battery:Component {id: 'COMP-002'})
+MATCH (processor:Component {id: 'COMP-003'})
+MATCH (camera:Component {id: 'COMP-004'})
+MATCH (casing:Component {id: 'COMP-005'})
+
+MATCH (s1:Supplier {id: 'SUP-001'})
+MATCH (s2:Supplier {id: 'SUP-002'})
+MATCH (s3:Supplier {id: 'SUP-003'})
+MATCH (s4:Supplier {id: 'SUP-004'})
+MATCH (s5:Supplier {id: 'SUP-005'})
+
+CREATE (screen)-[:SUPPLIED_BY {
+         lead_time_days: 30,
+         contract_until: '2025-12-31',
+         price_per_unit: 45.00
+       }]->(s1),
+       (battery)-[:SUPPLIED_BY {
+         lead_time_days: 20,
+         contract_until: '2025-06-30',
+         price_per_unit: 12.50
+       }]->(s2),
+       (processor)-[:SUPPLIED_BY {
+         lead_time_days: 45,
+         contract_until: '2026-12-31',
+         price_per_unit: 85.00
+       }]->(s3),
+       (camera)-[:SUPPLIED_BY {
+         lead_time_days: 25,
+         contract_until: '2025-09-30',
+         price_per_unit: 32.00
+       }]->(s4),
+       (casing)-[:SUPPLIED_BY {
+         lead_time_days: 15,
+         contract_until: '2025-12-31',
+         price_per_unit: 8.50
+       }]->(s5);
+```
+
+# Creating Raw Materials
+
+Components are made from raw materials:
+
+```cypher
+// Create raw materials
+CREATE (glass:RawMaterial {
+  id: 'RAW-001',
+  name: 'Specialized Glass',
+  type: 'Material',
+  origin: 'Germany',
+  sustainability_rating: 'A'
+}),
+(lithium:RawMaterial {
+  id: 'RAW-002',
+  name: 'Lithium Carbonate',
+  type: 'Chemical',
+  origin: 'Australia',
+  sustainability_rating: 'B'
+}),
+(silicon:RawMaterial {
+  id: 'RAW-003',
+  name: 'Silicon Wafers',
+  type: 'Semiconductor',
+  origin: 'Japan',
+  sustainability_rating: 'A'
+}),
+(opticGlass:RawMaterial {
+  id: 'RAW-004',
+  name: 'Optical Glass',
+  type: 'Material',
+  origin: 'Japan',
+  sustainability_rating: 'A'
+}),
+(aluminum:RawMaterial {
+  id: 'RAW-005',
+  name: 'Aluminum Ingots',
+  type: 'Metal',
+  origin: 'Canada',
+  sustainability_rating: 'A'
+}),
+(cobalt:RawMaterial {
+  id: 'RAW-006',
+  name: 'Cobalt',
+  type: 'Metal',
+  origin: 'Democratic Republic of Congo',
+  sustainability_rating: 'C'
+}),
+(rareEarth:RawMaterial {
+  id: 'RAW-007',
+  name: 'Rare Earth Elements',
+  type: 'Metal',
+  origin: 'China',
+  sustainability_rating: 'B'
+})
+RETURN glass, lithium, silicon, opticGlass, aluminum, cobalt, rareEarth;
+```
+
+# Linking Components to Raw Materials
+
+```cypher
+// Link components to raw materials
+MATCH (screen:Component {id: 'COMP-001'})
+MATCH (battery:Component {id: 'COMP-002'})
+MATCH (processor:Component {id: 'COMP-003'})
+MATCH (camera:Component {id: 'COMP-004'})
+MATCH (casing:Component {id: 'COMP-005'})
+
+MATCH (glass:RawMaterial {id: 'RAW-001'})
+MATCH (lithium:RawMaterial {id: 'RAW-002'})
+MATCH (cobalt:RawMaterial {id: 'RAW-006'})
+MATCH (silicon:RawMaterial {id: 'RAW-003'})
+MATCH (rareEarth:RawMaterial {id: 'RAW-007'})
+MATCH (opticGlass:RawMaterial {id: 'RAW-004'})
+MATCH (aluminum:RawMaterial {id: 'RAW-005'})
+
+CREATE (screen)-[:MADE_FROM {quantity_kg: 0.05}]->(glass),
+       (battery)-[:MADE_FROM {quantity_kg: 0.02}]->(lithium),
+       (battery)-[:MADE_FROM {quantity_kg: 0.01}]->(cobalt),
+       (processor)-[:MADE_FROM {quantity_kg: 0.001}]->(silicon),
+       (processor)-[:MADE_FROM {quantity_kg: 0.0001}]->(rareEarth),
+       (camera)-[:MADE_FROM {quantity_kg: 0.03}]->(opticGlass),
+       (casing)-[:MADE_FROM {quantity_kg: 0.15}]->(aluminum);
+```
+
+# Creating Tier-2 Suppliers (Sub-Suppliers)
+
+Raw materials come from second-tier suppliers:
+
+```cypher
+// Create Tier-2 suppliers (raw material suppliers)
+CREATE (s6:Supplier {
+  id: 'SUP-006',
+  name: 'GlassTech GmbH',
+  tier: 2,
+  country: 'Germany',
+  specialty: 'Specialty Glass Manufacturing',
+  certifications: ['ISO 9001', 'ISO 14001']
+}),
+(s7:Supplier {
+  id: 'SUP-007',
+  name: 'Australian Lithium Corp',
+  tier: 2,
+  country: 'Australia',
+  specialty: 'Lithium Mining',
+  certifications: ['ISO 9001', 'ISO 14001', 'Fairtrade']
+}),
+(s8:Supplier {
+  id: 'SUP-008',
+  name: 'Japan Silicon Inc',
+  tier: 2,
+  country: 'Japan',
+  specialty: 'Silicon Wafer Production',
+  certifications: ['ISO 9001', 'SEMI S2']
+}),
+(s9:Supplier {
+  id: 'SUP-009',
+  name: 'CanAlu Mining',
+  tier: 2,
+  country: 'Canada',
+  specialty: 'Aluminum Mining & Refining',
+  certifications: ['ISO 9001', 'ISO 14001', 'ASI']
+}),
+(s10:Supplier {
+  id: 'SUP-010',
+  name: 'Congo Cobalt Mines',
+  tier: 2,
+  country: 'Democratic Republic of Congo',
+  specialty: 'Cobalt Mining',
+  certifications: ['RMI']
+}),
+(s11:Supplier {
+  id: 'SUP-011',
+  name: 'China Rare Earth Group',
+  tier: 2,
+  country: 'China',
+  specialty: 'Rare Earth Mining',
+  certifications: ['ISO 9001']
+})
+RETURN s6, s7, s8, s9, s10, s11;
+```
+
+# Linking Raw Materials to Tier-2 Suppliers
+
+```cypher
+// Link raw materials to their suppliers
+MATCH (glass:RawMaterial {id: 'RAW-001'})
+MATCH (lithium:RawMaterial {id: 'RAW-002'})
+MATCH (silicon:RawMaterial {id: 'RAW-003'})
+MATCH (opticGlass:RawMaterial {id: 'RAW-004'})
+MATCH (aluminum:RawMaterial {id: 'RAW-005'})
+MATCH (cobalt:RawMaterial {id: 'RAW-006'})
+MATCH (rareEarth:RawMaterial {id: 'RAW-007'})
+
+MATCH (s6:Supplier {id: 'SUP-006'})
+MATCH (s7:Supplier {id: 'SUP-007'})
+MATCH (s8:Supplier {id: 'SUP-008'})
+MATCH (s9:Supplier {id: 'SUP-009'})
+MATCH (s10:Supplier {id: 'SUP-010'})
+MATCH (s11:Supplier {id: 'SUP-011'})
+
+CREATE (glass)-[:SUPPLIED_BY {
+         lead_time_days: 60,
+         price_per_kg: 150.00
+       }]->(s6),
+       (lithium)-[:SUPPLIED_BY {
+         lead_time_days: 90,
+         price_per_kg: 25000.00
+       }]->(s7),
+       (silicon)-[:SUPPLIED_BY {
+         lead_time_days: 75,
+         price_per_kg: 50000.00
+       }]->(s8),
+       (opticGlass)-[:SUPPLIED_BY {
+         lead_time_days: 60,
+         price_per_kg: 200.00
+       }]->(s6),
+       (aluminum)-[:SUPPLIED_BY {
+         lead_time_days: 45,
+         price_per_kg: 2.50
+       }]->(s9),
+       (cobalt)-[:SUPPLIED_BY {
+         lead_time_days: 120,
+         price_per_kg: 35000.00
+       }]->(s10),
+       (rareEarth)-[:SUPPLIED_BY {
+         lead_time_days: 90,
+         price_per_kg: 45000.00
+       }]->(s11);
+```
+
+# Creating Tier-1 to Tier-2 Supply Links
+
+Show that Tier-1 suppliers source from Tier-2 suppliers:
+
+```cypher
+// Create relationships showing Tier-1 sources from Tier-2
+MATCH (s1:Supplier {id: 'SUP-001'})  // DisplayTech Korea
+MATCH (s2:Supplier {id: 'SUP-002'})  // PowerCell China
+MATCH (s3:Supplier {id: 'SUP-003'})  // ChipMakers Taiwan
+MATCH (s4:Supplier {id: 'SUP-004'})  // OpticsPro Germany
+MATCH (s5:Supplier {id: 'SUP-005'})  // MetalWorks USA
+
+MATCH (s6:Supplier {id: 'SUP-006'})  // GlassTech GmbH
+MATCH (s7:Supplier {id: 'SUP-007'})  // Australian Lithium
+MATCH (s8:Supplier {id: 'SUP-008'})  // Japan Silicon
+MATCH (s9:Supplier {id: 'SUP-009'})  // CanAlu Mining
+MATCH (s10:Supplier {id: 'SUP-010'}) // Congo Cobalt
+MATCH (s11:Supplier {id: 'SUP-011'}) // China Rare Earth
+
+CREATE (s1)-[:SOURCES_FROM {material: 'Specialized Glass'}]->(s6),
+       (s2)-[:SOURCES_FROM {material: 'Lithium Carbonate'}]->(s7),
+       (s2)-[:SOURCES_FROM {material: 'Cobalt'}]->(s10),
+       (s3)-[:SOURCES_FROM {material: 'Silicon Wafers'}]->(s8),
+       (s3)-[:SOURCES_FROM {material: 'Rare Earth Elements'}]->(s11),
+       (s4)-[:SOURCES_FROM {material: 'Optical Glass'}]->(s6),
+       (s5)-[:SOURCES_FROM {material: 'Aluminum Ingots'}]->(s9);
+```
+
+::: callout-tip
+Now we have a complete **multi-tier supply chain** from raw materials to final product!
+:::
+
+# Query 1: View the Complete Supply Chain
+
+Let's trace the full supply chain for our product:
+
+```cypher
+// Show complete supply chain for SmartPhone X Pro
+MATCH path = (p:Product {id: 'PROD-001'})-[*]-(n)
+RETURN path
+LIMIT 100;
+```
+
+This query returns all nodes connected to our product, showing the entire supply network.
+
+::: callout-note
+In Neo4j Browser, this creates a beautiful **visual graph** of your supply chain.
+:::
+
+# Query 2: Find All Components of a Product
+
+```cypher
+// List all components in the smartphone
+MATCH (p:Product {id: 'PROD-001'})-[c:CONTAINS]->(comp:Component)
+RETURN comp.name as Component,
+       comp.type as Type,
+       comp.specifications as Specifications,
+       c.quantity as Quantity,
+       c.critical as Critical
+ORDER BY comp.type;
+```
+
+**Output:**
+| Component | Type | Specifications | Quantity | Critical |
+|-----------|------|----------------|----------|----------|
+| Triple Camera Module | Optics | 108MP main... | 1 | false |
+| Octa-Core Processor | CPU | 3.2GHz, 5nm | 1 | true |
+| OLED Display 6.7" | Display | HDR, 120Hz | 1 | true |
+
+# Query 3: Find Direct Suppliers (Tier-1)
+
+```cypher
+// Find all Tier-1 suppliers for the smartphone
+MATCH (p:Product {id: 'PROD-001'})-[:CONTAINS]->(comp:Component)
+      -[s:SUPPLIED_BY]->(supplier:Supplier)
+RETURN comp.name as Component,
+       supplier.name as Supplier,
+       supplier.country as Country,
+       s.lead_time_days as LeadTime,
+       s.price_per_unit as Price
+ORDER BY s.lead_time_days DESC;
+```
+
+This shows which companies directly supply components and their delivery times.
+
+# Query 4: Trace Raw Material Origins
+
+```cypher
+// Find all raw materials and their origins
+MATCH (p:Product {id: 'PROD-001'})-[:CONTAINS]->(comp:Component)
+      -[m:MADE_FROM]->(raw:RawMaterial)
+      -[:SUPPLIED_BY]->(supplier:Supplier)
+RETURN comp.name as Component,
+       raw.name as RawMaterial,
+       raw.origin as Origin,
+       raw.sustainability_rating as SustainabilityRating,
+       supplier.name as Supplier,
+       supplier.country as SupplierCountry
+ORDER BY raw.sustainability_rating;
+```
+
+**Critical for sustainability reporting and compliance!**
+
+# Query 5: Find Problematic Raw Materials
+
+Identify materials with poor sustainability ratings:
+
+```cypher
+// Find components with sustainability concerns
+MATCH (p:Product {id: 'PROD-001'})-[:CONTAINS]->(comp:Component)
+      -[:MADE_FROM]->(raw:RawMaterial)
+WHERE raw.sustainability_rating IN ['C', 'D', 'F']
+RETURN comp.name as Component,
+       raw.name as RawMaterial,
+       raw.origin as Origin,
+       raw.sustainability_rating as Rating
+ORDER BY raw.sustainability_rating DESC;
+```
+
+::: callout-warning
+This helps identify **supply chain risks** related to environmental or ethical concerns.
+:::
+
+# Query 6: Complete Supply Chain Path
+
+Trace from product all the way to raw material suppliers:
+
+```cypher
+// Complete traceability path for processor
+MATCH path = (p:Product {id: 'PROD-001'})-[:CONTAINS]->
+             (comp:Component {id: 'COMP-003'})-[:MADE_FROM]->
+             (raw:RawMaterial)-[:SUPPLIED_BY]->(tier2:Supplier)
+RETURN path;
+```
+
+Shows the complete journey of the processor from silicon mines to your phone.
+
+# Query 7: Find All Suppliers Across All Tiers
+
+```cypher
+// List all suppliers by tier
+MATCH (s:Supplier)
+RETURN s.tier as Tier,
+       s.name as Supplier,
+       s.country as Country,
+       s.specialty as Specialty,
+       s.certifications as Certifications
+ORDER BY s.tier, s.country;
+```
+
+**Output:**
+| Tier | Supplier | Country | Specialty |
+|------|----------|---------|-----------|
+| 1 | ChipMakers Taiwan | Taiwan | Semiconductor Fabrication |
+| 1 | DisplayTech Korea | South Korea | OLED Displays |
+| 2 | Australian Lithium Corp | Australia | Lithium Mining |
+
+# Query 8: Identify Single Points of Failure
+
+Find components with only one supplier:
+
+```cypher
+// Find components with single supplier dependency
+MATCH (comp:Component)-[:SUPPLIED_BY]->(s:Supplier)
+WITH comp, count(s) as supplierCount
+WHERE supplierCount = 1
+MATCH (comp)-[:SUPPLIED_BY]->(supplier:Supplier)
+RETURN comp.name as Component,
+       comp.type as Type,
+       supplier.name as SingleSupplier,
+       supplier.country as Country;
+```
+
+::: callout-warning
+**Risk Management:** These are vulnerabilities in your supply chain!
+:::
+
+# Query 9: Calculate Total Lead Time
+
+Find the longest supply chain path (critical path):
+
+```cypher
+// Calculate longest lead time path
+MATCH path = (p:Product {id: 'PROD-001'})-[:CONTAINS]->
+             (comp:Component)-[s:SUPPLIED_BY]->(tier1:Supplier)
+RETURN comp.name as Component,
+       tier1.name as Supplier,
+       s.lead_time_days as LeadTime
+ORDER BY s.lead_time_days DESC
+LIMIT 5;
+```
+
+Helps with **production planning** and inventory management.
+
+# Query 10: Find Alternative Suppliers
+
+Add alternative suppliers and find them:
+
+```cypher
+// First, add an alternative supplier
+MATCH (processor:Component {id: 'COMP-003'})
+MERGE (alt:Supplier {
+  id: 'SUP-012',
+  name: 'SemiCon Korea',
+  tier: 1,
+  country: 'South Korea',
+  specialty: 'Semiconductor Fabrication'
+})
+MERGE (processor)-[:SUPPLIED_BY {
+  lead_time_days: 40,
+  price_per_unit: 82.00,
+  backup: true
+}]->(alt);
+
+// Now find all suppliers for the processor
+MATCH (comp:Component {id: 'COMP-003'})-[s:SUPPLIED_BY]->(supplier:Supplier)
+RETURN comp.name as Component,
+       supplier.name as Supplier,
+       s.price_per_unit as Price,
+       s.lead_time_days as LeadTime,
+       COALESCE(s.backup, false) as IsBackup;
+```
+
+# Query 11: Country Risk Analysis
+
+Identify concentration risk by country:
+
+```cypher
+// Show supplier distribution by country
+MATCH (s:Supplier)
+RETURN s.country as Country,
+       count(s) as SupplierCount,
+       collect(s.name) as Suppliers
+ORDER BY SupplierCount DESC;
+```
+
+**Strategic insight:** Are you too dependent on one country?
+
+# Query 12: Find Suppliers with Expiring Contracts
+
+```cypher
+// Find suppliers with contracts expiring soon
+MATCH (comp:Component)-[s:SUPPLIED_BY]->(supplier:Supplier)
+WHERE s.contract_until < '2026-01-01'
+RETURN comp.name as Component,
+       supplier.name as Supplier,
+       s.contract_until as ContractExpiry,
+       s.price_per_unit as CurrentPrice
+ORDER BY s.contract_until;
+```
+
+::: callout-tip
+**Procurement Planning:** Helps you prepare contract renewals in advance.
+:::
+
+# Query 13: Cost Analysis
+
+Calculate component costs:
+
+```cypher
+// Calculate total component costs
+MATCH (p:Product {id: 'PROD-001'})-[c:CONTAINS]->(comp:Component)
+      -[s:SUPPLIED_BY]->(supplier:Supplier)
+RETURN comp.name as Component,
+       s.price_per_unit as UnitCost,
+       c.quantity as Quantity,
+       (s.price_per_unit * c.quantity) as TotalCost
+ORDER BY TotalCost DESC;
+
+// Calculate grand total
+MATCH (p:Product {id: 'PROD-001'})-[c:CONTAINS]->(comp:Component)
+      -[s:SUPPLIED_BY]->(supplier:Supplier)
+RETURN sum(s.price_per_unit * c.quantity) as TotalComponentCost,
+       p.price as RetailPrice,
+       (p.price - sum(s.price_per_unit * c.quantity)) as Margin;
+```
+
+# Advanced: Graph Algorithms
+
+Neo4j provides powerful graph algorithms:
+
+### Shortest Path
+```cypher
+// Find shortest supply path between two suppliers
+MATCH (s1:Supplier {id: 'SUP-003'}),
+      (s2:Supplier {id: 'SUP-011'})
+MATCH path = shortestPath((s1)-[*]-(s2))
+RETURN path;
+```
+
+### Centrality
+```cypher
+// Find most critical suppliers (degree centrality)
+MATCH (s:Supplier)-[r]-()
+RETURN s.name as Supplier,
+       s.tier as Tier,
+       count(r) as Connections
+ORDER BY Connections DESC
+LIMIT 5;
+```
+
+# Practical Exercise 1
+
+**Task:** Add a second product (Laptop) with some shared suppliers
+
+1. Create a new Product node
+2. Create 3-4 Component nodes
+3. Link components to existing suppliers where possible
+4. Create new suppliers where needed
+5. Query to find shared suppliers between products
+
+::: callout-tip
+This demonstrates **supply chain overlap** and **economies of scale**.
+:::
+
+# Practical Exercise 2
+
+**Task:** Model a supply chain disruption
+
+1. Add a `status` property to suppliers (active/disrupted)
+2. Mark one Tier-2 supplier as disrupted
+3. Write a query to find all affected products
+4. Write a query to find alternative sources
+
+```cypher
+// Example: Mark a supplier as disrupted
+MATCH (s:Supplier {id: 'SUP-010'})
+SET s.status = 'disrupted',
+    s.disruption_reason = 'Political instability',
+    s.disruption_date = date('2025-01-10');
+```
+
+# Practical Exercise 3
+
+**Task:** Add temporal data for tracking changes
+
+1. Add `effective_date` to relationships
+2. Model price changes over time
+3. Query historical pricing
+4. Analyze cost trends
+
+```cypher
+// Example: Add historical pricing
+MATCH (comp:Component {id: 'COMP-003'})-[s:SUPPLIED_BY]->
+      (supplier:Supplier {id: 'SUP-003'})
+SET s.price_history = [
+  {date: '2024-01-01', price: 90.00},
+  {date: '2024-07-01', price: 87.00},
+  {date: '2025-01-01', price: 85.00}
+];
+```
+
+# Real-World Applications
+
+::: columns
+::: column
+### 🏭 Manufacturing
+- Track component sources
+- Ensure quality compliance
+- Manage inventory levels
+:::
+
+::: column
+### 🌱 Sustainability
+- Trace carbon footprint
+- Verify ethical sourcing
+- Report on ESG metrics
+:::
+:::
+
+::: columns
+::: column
+### ⚖️ Compliance
+- Conflict mineral reporting
+- Sanctions compliance
+- Audit trail maintenance
+:::
+
+::: column
+### 💰 Finance
+- Supply chain financing
+- Risk assessment
+- Cost optimization
+:::
+:::
+
+# Best Practices
+
+### 🎯 Modeling
+- Use **meaningful relationship types**
+- Add **properties that matter** to your business
+- Keep **IDs consistent** across systems
+- Model **temporal data** when history matters
+
+### ⚡ Performance
+- Create **indexes** on frequently queried properties
+- Use **parameters** in queries (not string concatenation)
+- Limit result sets with **LIMIT** clauses
+- Profile queries with **EXPLAIN** and **PROFILE**
+
+# Creating Indexes
+
+Improve query performance:
+
+```cypher
+// Create indexes on frequently queried properties
+CREATE INDEX product_id IF NOT EXISTS FOR (p:Product) ON (p.id);
+CREATE INDEX component_id IF NOT EXISTS FOR (c:Component) ON (c.id);
+CREATE INDEX supplier_id IF NOT EXISTS FOR (s:Supplier) ON (s.id);
+CREATE INDEX supplier_tier IF NOT EXISTS FOR (s:Supplier) ON (s.tier);
+CREATE INDEX supplier_country IF NOT EXISTS FOR (s:Supplier) ON (s.country);
+
+// View existing indexes
+SHOW INDEXES;
+```
+
+::: callout-tip
+Indexes dramatically speed up `MATCH` operations on large datasets.
+:::
+
+# Visualization Tips
+
+In Neo4j Browser:
+
+1. **Color by label**: Configure node colors for Products, Components, Suppliers
+2. **Size by property**: Make nodes bigger based on price or importance
+3. **Label display**: Show names or IDs on nodes
+4. **Relationship display**: Show relationship types
+
+```cypher
+// Nice visualization query
+MATCH path = (p:Product)-[*..3]-(n)
+WHERE p.id = 'PROD-001'
+RETURN path;
+```
+
+# Integration with Other Systems
+
+Neo4j can integrate with:
+
+- **ERP Systems** (SAP, Oracle) — import supplier data
+- **BI Tools** (Tableau, Power BI) — visualize supply networks
+- **APIs** — expose supply chain data via REST/GraphQL
+- **Event Streams** (Kafka) — real-time supply chain updates
+
+```python
+# Python example using neo4j driver
+from neo4j import GraphDatabase
+
+driver = GraphDatabase.driver(
+    "bolt://localhost:7687",
+    auth=("neo4j", "password")
+)
+
+def find_suppliers(product_id):
+    with driver.session() as session:
+        result = session.run("""
+            MATCH (p:Product {id: $product_id})-[:CONTAINS]->
+                  (c:Component)-[:SUPPLIED_BY]->(s:Supplier)
+            RETURN c.name, s.name
+        """, product_id=product_id)
+        return [record for record in result]
+```
+
+# Export and Backup
+
+### Export Data
+```cypher
+// Export as JSON
+CALL apoc.export.json.all("supply-chain.json", {});
+
+// Export specific subgraph
+MATCH path = (p:Product {id: 'PROD-001'})-[*]-(n)
+WITH collect(path) as paths
+CALL apoc.export.json.data(
+  nodes(paths),
+  relationships(paths),
+  'product-supply-chain.json',
+  {}
+)
+YIELD file
+RETURN file;
+```
+
+### Backup
+```bash
+# Using Neo4j admin tools
+neo4j-admin dump --database=neo4j --to=supply-chain-backup.dump
+```
+
+# Summary
+
+::: columns
+::: column
+### What We Built
+✅ Multi-tier supply chain model
+✅ Products, components, materials
+✅ Multi-level supplier relationships
+✅ Properties for business logic
+:::
+
+::: column
+### What We Learned
+✅ Graph database fundamentals
+✅ Cypher query language
+✅ Supply chain traceability
+✅ Risk analysis techniques
+:::
+:::
+
+::: callout-note
+**Key Insight:** Graph databases make complex supply chain queries **natural and fast**.
+:::
+
+# Next Steps
+
+1. 📚 **Expand the model** — Add more products and suppliers
+2. 🔄 **Add temporal data** — Track changes over time
+3. 📊 **Integrate with BI** — Visualize supply chain analytics
+4. 🚨 **Build alerts** — Notify on disruptions or contract expirations
+5. 🌐 **Create an API** — Expose supply chain data to other systems
+6. 🧪 **Test scenarios** — Model "what-if" supply disruptions
+
+# Resources
+
+### 📖 Learning
+- [Neo4j Graph Academy](https://graphacademy.neo4j.com/) — Free courses
+- [Neo4j Documentation](https://neo4j.com/docs/)
+- [Cypher Refcard](https://neo4j.com/docs/cypher-refcard/current/)
+
+### 🛠️ Tools
+- [Neo4j Desktop](https://neo4j.com/download/)
+- [Neo4j Bloom](https://neo4j.com/product/bloom/) — Visual exploration
+- [APOC Library](https://neo4j.com/labs/apoc/) — Procedure extensions
+
+### 💬 Community
+- [Neo4j Community Forum](https://community.neo4j.com/)
+- [Neo4j Discord](https://discord.gg/neo4j)
+
+# Questions?
+
+::: callout-tip
+### Ready to test on your Neo4j instance?
+
+Run through the queries in order, starting with clearing the database and creating the supply chain.
+
+Let me know which query results you'd like to see first!
+:::
+
+# Thank You!
+
+**Contact:**
+📧 cg.verhoef@windesheim.nl
+🌐 https://valuechainhackers.xyz
+
+**Resources:**
+All code and queries from this tutorial are available in the presentation file.
+
+---
+
+*Built with Quarto and Neo4j*
