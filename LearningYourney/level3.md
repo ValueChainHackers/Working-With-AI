@@ -1,4 +1,4 @@
-# VCH AI Usage Level 2 – Source Collector and Curator
+# VCH AI Usage Level 3 – Data & Code Augmented Analyst
 
 *Syllabus / Teacher Documentation*
 
@@ -6,332 +6,329 @@
 
 ## 1. Module Overview
 
-**Title:** AI Usage Level 2 – Source Collector and Curator
-**Context:** Value Chain Hackers (VCH) – Supply chain finance & sustainability projects
-**Position in AI Ladder:** After Level 1 – Aware Chat User, before Level 3 – Data & Code Augmented Analyst
+**Title:** AI Usage Level 3 – Data & Code Augmented Analyst
+**Context:** Value Chain Hackers (VCH) – supply chain finance & sustainability projects
+**Position in AI Ladder:**
+After Level 2 – Source Collector & Curator, before Level 4 – Workflow Engineer
 
-At **Level 2**, students move from:
+At **Level 3**, students move from:
 
-* “I can use AI to understand and find some sources”
+* “We understand the problem and have a curated library of sources”
   to
-* **“I can systematically collect, organise, and compare sources, using AI as an assistant but not as the library.”**
-
-They begin to work like junior researchers:
-
-* Building a **structured knowledge base** for their project,
-* Documenting where information comes from,
-* Using AI to **compare, cluster, and critique** sources,
-* Becoming more resilient against “dead internet” noise by working from a curated set of documents.
-
----
-
-## 2. Starting Points: Non-AI & Level 1 Students
-
-### 2.1 Non-AI student
-
-A student **not using AI at all**:
-
-* Collects sources manually through browser search and library tools.
-* Keeps PDFs and links in ad-hoc folders or downloads.
-* May read only a few documents deeply due to time pressure.
-* Does not have systematic help for:
-
-  * Summarising,
-  * Comparing,
-  * Translating,
-  * Structuring documents.
-
-They can still do good work, but:
-
-* Their literature base is often **narrow**.
-* Their comparison between sources is often **implicit**, not documented.
-
-### 2.2 Level 1 – Aware Chat User
-
-A **Level 1** student:
-
-* Uses AI chat to:
-
-  * Understand concepts and clean up writing.
-* Uses SearXNG to:
-
-  * Find a handful of credible sources per topic.
-* Stores sources in **basic folders** in OneDrive / SharePoint.
-* Has a small “AI usage and sources” section in their report.
-
-Compared to non-AI students, they are:
-
-* Faster at understanding,
-* Slightly broader in their search,
-* More explicit about AI and its limitations.
-
----
-
-## 3. Role of Level 2 – What’s New?
-
-At **Level 2 – Source Collector and Curator**, the student:
-
-* Stops treating sources as a random pile of PDFs and links.
-* Starts treating sources as a **designed collection**:
-
-  * Categorised,
-  * Annotated,
-  * Compared,
-  * Used consciously in Theory U phases.
+* **“We work with real data and code. AI helps us build scripts, analyses, and visualisations, but the data is the ground truth.”**
 
 They:
 
-* Use AI to help **map, cluster, and contrast** sources.
-* Recognise tensions, gaps, and biases between documents.
-* Document their **knowledge base** so others can reuse it.
+* Use AI (via **Cline + OpenAI/OpenRouter**) to write and debug simple code,
+* Analyse **actual project data** (Excel, survey exports, financials, chain data),
+* Document their analysis in a **reproducible way** (scripts/notebooks),
+* Strengthen truth-seeking by grounding claims in **their own numbers and structures**, not just documents or AI text.
+
+---
+
+## 2. Starting Points: Non-AI, Level 1, Level 2
+
+### 2.1 Non-AI student (no AI at all)
+
+A non-AI student:
+
+* Works with data using:
+
+  * Excel, maybe basic Power BI,
+  * Manual formulas and pivot tables.
+* Strengths:
+
+  * Direct contact with data,
+  * Low risk of AI hallucinations in analysis.
+* Limitations:
+
+  * Struggles to move beyond basic summaries,
+  * Repetitive manual work,
+  * Harder to reproduce/automate steps,
+  * Often avoids coding altogether.
+
+### 2.2 Level 1 – Aware Chat User
+
+A Level 1 student:
+
+* Uses AI chat for:
+
+  * Concept explanations (SCF, CSRD, etc.),
+  * Writing support,
+  * Light fact-checking with SearXNG.
+* Data work is still:
+
+  * Mostly manual (Excel),
+  * Or not done at all if they are afraid of data.
+
+### 2.3 Level 2 – Source Collector & Curator
+
+A Level 2 student:
+
+* Maintains a **structured library** of documents:
+
+  * Regulations, reports, company docs, datasets.
+* Uses AI to:
+
+  * Summarise and compare sources,
+  * Identify gaps and contradictions.
+* Data handling:
+
+  * Still mainly at the “document + indicator” level,
+  * Only basic Excel or descriptive stats.
+
+---
+
+## 3. Role of Level 3 – What’s New?
+
+At **Level 3 – Data & Code Augmented Analyst**, the student:
+
+* Starts treating data (tables, surveys, chain mappings) as a **first-class citizen** in the project.
+* Uses AI not just for text, but for **code and analysis**:
+
+  * Cline helps write scripts and notebooks,
+  * AI suggests transformations and visualisations.
+* Produces **reproducible analysis**:
+
+  * Someone else can run their script and get the same result.
 
 **Key shift:**
 
-> From “I have some documents”
+> From “we know what reports say”
 > to
-> **“I maintain a curated knowledge base for our chain/problem.”**
+> **“we can show what our data says, and how we got there.”**
 
 ---
 
-## 4. Learning Outcomes (Level 2)
+## 4. Learning Outcomes (Level 3)
 
-After completing Level 2, students will be able to:
+After completing Level 3, students will be able to:
 
-1. **Systematically collect sources**
+1. **Set up a basic data workflow**
 
-   * Identify key categories of sources relevant to their project:
+   * Identify relevant project data:
 
-     * Regulations,
-     * Sector reports,
-     * Academic/NGO studies,
-     * Company/internal documents,
-     * Data sources.
-   * Ensure each category has **multiple, diverse** sources.
+     * Surveys, Excel sheets, CSV exports, financials, chain structures.
+   * Store them in a clear location in **OneDrive/SharePoint/Teams** with versioning.
 
-2. **Organise and document sources**
+2. **Use AI (Cline) to build and debug simple code**
 
-   * Maintain a **source register** (e.g. in Excel, OneNote, or Word) including:
+   * Use **Cline + OpenAI/OpenRouter** in VS Code (or similar):
 
-     * Title, author/organisation, year,
-     * Type (law, report, article, dataset),
-     * Link/location in OneDrive/SharePoint,
-     * 2–3 line summary,
-     * Credibility/limitations.
+     * Read and understand existing Python/R code snippets,
+     * Generate simple scripts or notebooks,
+     * Fix errors and adjust scripts to match their data.
 
-3. **Use AI to compare and cluster sources**
+3. **Perform basic analysis and visualisation**
 
-   * Use OpenWebUI / ChatGPT to:
+   * Use Python/R (via Cline and/or notebooks) to:
 
-     * Summarise each source,
-     * Compare sources on the same topic,
-     * Identify agreements, contradictions, and gaps.
-   * Optionally upload PDFs to a document-chat system (e.g. Kotaemon or equivalent) to query within the **project’s** source set.
+     * Clean and transform data (missing values, types),
+     * Compute simple statistics (counts, averages, distributions),
+     * Create basic plots (bar charts, line charts, scatter plots),
+     * Optionally export images/tables to PowerPoint/Word.
 
-4. **Make source-based arguments, not AI-based arguments**
+4. **Explain what the code does and why it is trustworthy**
 
-   * In their writing, refer to:
+   * Comment their scripts/notebooks in simple language,
+   * Describe the analytic steps in their report (not only show code),
+   * Connect each figure/table directly to a question or decision.
 
-     * Specific documents and organisations,
-     * Evidence from multiple sources.
-   * Clearly distinguish between:
+5. **Strengthen truth-seeking behaviour with data**
 
-     * “AI’s synthesis”
-     * “What each original source actually says”.
+   * Use data to:
 
-5. **Strengthen truth-seeking behaviour**
+     * Confirm or challenge claims from sources and stakeholders,
+     * Reveal patterns, outliers, and contradictions.
+   * Treat AI suggestions as **hypotheses**, but:
 
-   * Recognise patterns:
-
-     * Where sources converge (consensus),
-     * Where they diverge (contested issues).
-   * Use these patterns to refine their problem framing and stakeholder analysis.
+     * Trust the numbers/logs as the check,
+     * Document all steps that led from raw data to insight.
 
 ---
 
-## 5. Tools & Environment (Level 2)
+## 5. Tools & Environment (Level 3)
 
 ### 5.1 Required tools
 
 * **OpenWebUI / ChatGPT (OpenAI stack)**
 
-  * For summarising, comparing, and clustering information.
-* **SearXNG**
+  * For explaining code, stats, and concepts.
 
-  * For finding additional sources beyond the first search results.
+* **Cline (with OpenAI/OpenRouter API key)**
+
+  * Running inside **VS Code** (or compatible editor),
+  * Main interface for AI-assisted coding.
+
+* **Programming & analysis environment**
+
+  * Python or R, via:
+
+    * VS Code Jupyter notebooks,
+    * Local Jupyter installation,
+    * Or institutionally provided Jupyter/RStudio servers.
+
 * **Microsoft 365**
 
-  * **OneDrive / SharePoint**
+  * OneDrive/SharePoint for:
 
-    * Structured folder system for sources.
-  * **Excel / OneNote / Word**
+    * Raw data,
+    * Cleaned data,
+    * Outputs (charts, tables).
+  * Excel for:
 
-    * For the source register (literature/source matrix).
-  * **Teams**
-
-    * For collaboration and sharing links.
-* **Optional: Document-chat / RAG tool**
-
-  * E.g. Kotaemon, OpenWebUI with file upload:
-
-    * To ask questions over a subset of curated project documents.
+    * Quick checks and simpler transformations.
 
 ### 5.2 Recommended structures
 
-**Folder structure:**
+* OneDrive/SharePoint:
 
-* `ProjectName/01-Sources/`
+  * `ProjectName/02-Data/`
 
-  * `Regulations-CSRD-EUDR/`
-  * `Sector-Reports/`
-  * `Academic-NGO/`
-  * `Company-Internal/`
-  * `Data-Sets/`
+    * `Raw/` (original files from partners or surveys)
+    * `Clean/` (processed files for analysis)
+    * `Notebooks/` or `Scripts/` (code)
+    * `Figures/` (exported charts used in reports)
 
-**Source register (e.g. Excel columns):**
+* GitHub (optional but recommended for advanced teams):
 
-* Category
-* Title
-* Author/Organisation
-* Year
-* Type (law/report/article/data)
-* Link / File path
-* Short Summary (2–3 lines)
-* Use in project (why important?)
-* Limitations / Bias / Notes
+  * `data/` (mirrored from “Raw/Clean”),
+  * `notebooks/` or `src/` (code),
+  * `README.md` documenting steps.
 
 ---
 
 ## 6. Integration with Theory U & VCH Phases
 
-### 6.1 Co Sensing – Deepening the field
+### 6.1 Co Sensing – Data as part of the field
 
-Level 2 is heavily anchored in **Co Sensing**:
+* Students treat data as a **way of listening**:
 
-* Students explore the “field” through documents:
+  * To customers,
+  * To suppliers,
+  * To operational processes.
+* AI (Cline) helps them:
 
-  * Laws,
-  * Market analyses,
-  * Stakeholder statements,
-  * NGO and academic work.
-* They use AI to:
-
-  * Summarise and compare viewpoints,
-  * Identify contradictions and missing voices.
+  * Transform messy data into readable forms,
+  * Generate first visuals and summary tables.
 
 **Outcome:**
-A **mapped landscape** of perspectives and evidence.
+Quantitative and structural patterns become visible (e.g. lead times, variability, risk exposure).
 
-### 6.2 Co Presencing – Clarifying what really matters
+### 6.2 Co Presencing – Facing what the data shows
 
-As they move towards **Co Presencing**:
+* Students ask:
 
-* They review their curated sources and ask:
+  * “What assumptions did we have that the data confirms?”
+  * “What surprises us in the data?”
+  * “Which stakeholders are in the worst position according to these numbers?”
+* AI supports:
 
-  * “Which facts and patterns keep returning?”
-  * “Which voices are missing from our sources?”
-  * “What does this mean for the real core of our problem?”
-
-AI supports:
-
-* Generating drafts of:
-
-  * Problem statements,
-  * Tensions,
-  * Key questions,
-* Based on clusters and patterns they have already identified.
+  * Drafting short narratives that connect data patterns to stakeholder stories and earlier source work (Level 2).
 
 **Outcome:**
-A more honest and grounded understanding of the core problem, supported by a curated, documented knowledge base.
+Insights that link data + documents + lived experience emerge, shaping a more honest understanding of the problem.
+
+### 6.3 Co Creating – Data-informed prototypes
+
+* In designing solutions, students:
+
+  * Use their analyses to justify design choices,
+  * Explore “what if” scenarios in a simple way (e.g. changing parameters in code or Excel).
+* AI helps:
+
+  * Suggest new metrics or segments to look at,
+  * Propose improvements to scripts so they can test ideas faster.
 
 ---
 
-## 7. Teaching Strategy (How We Teach Level 2)
+## 7. Teaching Strategy (How We Teach Level 3)
 
-### 7.1 Learning Goal for Mid-Semester
+### 7.1 Learning Goal for the “Data Sprint”
 
-By the middle of the semester (after Level 1 is stable), each team should have:
+By the end of the **data-focused sprint**:
 
-* A structured **OneDrive/SharePoint source library**.
-* A working **source register** (Excel/OneNote/Word).
-* Evidence that AI has been used to:
+* Each team has:
 
-  * Summarise and compare multiple sources,
-  * Identify gaps or contradictions.
+  * At least one **working script or notebook** that:
 
-### 7.2 Activity 1 – Source Mapping Workshop
+    * Loads project data,
+    * Cleans/transforms it,
+    * Produces 1–3 meaningful charts or tables.
+  * Documentation (in report or comments) explaining:
 
-**Step 1 – Define source categories**
+    * What the code does,
+    * How it affects their understanding of the chain/problem.
 
-Teacher and students co-create a simple list of categories, e.g.:
+### 7.2 Activity 1 – Guided Cline Onboarding
 
-* Regulations & Legal Frameworks
-* Sector/Market Reports
-* Academic/NGO Studies
-* Company/Partner Documents
-* Data/Indicators (e.g. trade flows, emissions, finance)
+**Teacher demo:**
 
-**Step 2 – Source hunt per category**
+1. Open VS Code with Cline installed.
+2. Show a **small CSV file** (e.g. 50–200 rows: suppliers, volumes, delays, scores).
+3. Ask Cline (in natural language) to:
 
-In groups:
+   * “Write a Python script that loads this CSV and prints basic statistics.”
+4. Run the script, show the output.
+5. Ask Cline to:
 
-1. Use **SearXNG** and library tools to find:
+   * Add a simple plot,
+   * Save the result as a PNG.
 
-   * 2–3 sources in each category.
-2. Store them in the agreed folder structure on OneDrive/SharePoint.
-3. Fill in the **source register** with:
+Narrate:
 
-   * Category, title, year, organisation, link, 2–3 line summary.
+* How to read and adjust AI-generated code,
+* When to ask “what does this line do?”,
+* How to verify results (e.g. cross-check with Excel).
 
-**Step 3 – Quick AI support**
+### 7.3 Activity 2 – Team Data Mini-Project
 
-For each source:
+**Inputs:**
 
-1. Paste a key paragraph or summary into OpenWebUI / ChatGPT.
-2. Ask:
+* Each team receives:
 
-   * “Summarise this in 5–7 bullet points.”
-   * “What are the main claims and limitations?”
-3. Paste AI’s bullet points into the “Short Summary” field and adjust manually.
+  * Their own project data if available (survey results, partner data, etc.),
+  * Or a realistic sample dataset related to their theme (e.g. cocoa shipments, SME invoices, resilience scores).
 
-### 7.3 Activity 2 – Compare and Contrast
+**Tasks:**
 
-**Goal:** Show students how AI can help compare sources but not replace their judgement.
+1. Store raw data in:
 
-**Instructions:**
+   * `ProjectName/02-Data/Raw/`.
+2. With Cline + AI chat:
 
-1. Students choose 2–3 sources on the same topic (e.g. cocoa deforestation, SME financing).
-2. They give AI the short summaries or key quotes from each source (not the full PDFs).
-3. They ask:
+   * Write a small script or notebook that:
 
-   * “Compare these sources. Where do they agree? Where do they differ?”
-   * “What might explain the differences?”
-4. They then:
+     * Loads data,
+     * Cleans obvious issues (wrong types, missing values),
+     * Computes basic stats and creates 1–2 plots.
+3. Export plots to:
 
-   * Check AI’s comparison against the originals,
-   * Correct any mistakes or oversimplifications,
-   * Add a “Comparison/Notes” field to their source register.
+   * `ProjectName/02-Data/Figures/`.
 
-### 7.4 Activity 3 – Gap and Bias Analysis
+**Deliverable:**
 
-**Goal:** Connect Level 2 behaviour to truth-seeking and dead internet defence.
+* 1–2 pages in their report:
 
-1. Ask students to:
+  * A short explanation of:
 
-   * Sort their sources by category and date in Excel / OneNote.
-2. Reflection questions:
+    * The data,
+    * The script steps (in words),
+    * What the graphs/tables show,
+    * At least one surprising or important finding.
 
-   * “Which stakeholder groups are **over-represented** in our sources?”
-   * “Which stakeholder groups are **missing or under-represented**?”
-   * “Which regions, value chain segments, or time periods are missing?”
-3. AI support:
+### 7.4 Activity 3 – “AI vs Data” Reflection
 
-   * Ask AI:
+Students answer:
 
-     * “Based on this list of sources, which perspectives might be missing?”
-   * Students then:
+* “What did AI suggest we should do with this data (e.g. transformations, charts)?”
+* “What did the data actually show once we ran the code?”
+* “Where did AI propose something that did not make sense for our dataset?”
 
-     * Decide if AI’s suggestions are relevant,
-     * Look for at least one new source that fills an important gap.
+Teacher encourages:
+
+* Noticing when AI “hallucinates structure” (e.g. columns that don’t exist),
+* Leaning on **actual data shape and content** as the arbiter.
 
 ---
 
@@ -341,50 +338,46 @@ For each source:
 
 Teachers can ask teams to show:
 
-* Their **OneDrive/SharePoint source folders**.
-* Their **source register** with:
+* Their **02-Data** folder structure (Raw/Clean/Notebooks/Figures),
+* A working script or notebook that they can run in front of you,
+* A short, human-language explanation of:
 
-  * Multiple categories and entries,
-  * Short summaries per source,
-  * At least some notes on limitations/bias.
-* At least one AI conversation where:
+  * The analysis steps,
+  * Why these steps are relevant for the project.
 
-  * They compared or clustered sources,
-  * They corrected AI based on original texts.
+### 8.2 Summative criteria: “Has the team reached Level 3?”
 
-### 8.2 Summative criteria: “Has the team reached Level 2?”
+A team **qualifies as Level 3 – Data & Code Augmented Analyst** if:
 
-A team **qualifies as Level 2 – Source Collector and Curator** if:
+1. **Functional data pipeline (small but real)**
 
-1. **Structured library**
+   * There is at least one script/notebook that:
 
-   * There is a clear folder structure for sources.
-   * Each agreed category has multiple, meaningful documents.
+     * Loads real project data,
+     * Performs meaningful cleaning/transformations,
+     * Outputs charts or tables used in the report.
 
-2. **Source register**
+2. **AI-assisted coding with understanding**
 
-   * An up-to-date register exists with:
+   * They can show Cline/AI conversations that:
 
-     * Titles, organisations, years, links,
-     * Short summaries,
-     * Notes on limitations or biases for key sources.
+     * Helped generate or debug the code,
+     * Were not blindly accepted (they adjusted/tweaked).
+   * They can explain at a high level what the code is doing.
 
-3. **AI-assisted comparison**
+3. **Data-informed insight**
 
-   * They can show an example where:
+   * The report includes:
 
-     * AI was used to compare or cluster sources,
-     * They checked and corrected AI’s synthesis,
-     * This comparison influenced their problem framing or stakeholder analysis.
+     * At least one insight that directly comes from their data,
+     * Clear linking between graphs/tables and project questions.
 
-4. **Evidence of truth-seeking**
+4. **Critical behaviour**
 
-   * They can identify:
+   * They have at least one example where:
 
-     * At least one important gap in their sources (missing voice, region, stakeholder).
-     * At least one contested issue where sources disagree, and explain:
-
-       * How they handle this disagreement in their project.
+     * AI suggested something incorrect or unhelpful (e.g. wrong column name, nonsensical model),
+     * They spotted the issue using data and fixed it.
 
 ---
 
@@ -392,72 +385,84 @@ A team **qualifies as Level 2 – Source Collector and Curator** if:
 
 ### 9.1 Student reflection prompts
 
-* “Which source turned out to be more important than we first thought? Why?”
-* “Where do our sources strongly disagree? How do we handle that?”
-* “Which stakeholders or perspectives are missing in our library?”
-* “Where did AI give a misleading or oversimplified comparison of sources?”
-* “How is our work different now that we have a structured knowledge base?”
+* “What did we learn from the data that we could not see in documents alone?”
+* “Which part of the code do we actually understand, and which part still feels like magic?”
+* “Where did the AI give us a code suggestion that was wrong or dangerous?”
+* “If we had to do this without AI, what would take much longer or be too hard?”
 
 ### 9.2 Teacher reflection prompts
 
-* “Are students just collecting PDFs, or are they really curating and annotating them?”
-* “Is AI being used as a critical assistant, or as a shortcut to avoid reading?”
-* “Do students understand that disagreements between sources are normal and useful?”
-* “Are non-AI users still able to engage, and do they see the value in the structured library approach?”
+* “Are students truly interacting with the code, or just pressing ‘run’ on AI output?”
+* “Do they see data as a conversation partner in Co Sensing, or just as a requirement?”
+* “Are weaker programmers actually empowered by Cline, or are they avoiding thinking about the logic?”
+* “Are we giving them datasets that are meaningful enough to change their view of the chain/problem?”
 
 ---
 
-## 10. From Information → Insight → Truth at Level 2
+## 10. From Information → Insight → Truth at Level 3
 
-At Level 2, students move further along the chain:
+At Level 3, the progression looks like this:
 
 * **Information**
 
-  * They have many documents, not just a few.
+  * Data points, columns, rows, raw exports, logs.
+
 * **Insight**
 
-  * They see patterns, agreements, and contradictions between sources.
-  * They develop richer problem and stakeholder maps grounded in evidence.
+  * Patterns in the data:
+
+    * Distributions,
+    * Clusters,
+    * Outliers,
+    * Correlations.
+  * AI helps them build and interpret these patterns faster.
+
 * **Truth-seeking**
 
-  * They understand that:
+  * Truth is now:
 
-    * No single source or AI output is “the truth”.
-    * Truth in complex supply chains comes from:
+    * What survives both **document cross-checking** (Level 2) and **data analysis** (Level 3).
+  * Students triage:
 
-      * Triangulating multiple sources,
-      * Noticing gaps and biases,
-      * Keeping track of where every claim comes from.
+    * AI’s suggestions,
+    * Source claims,
+    * Data evidence.
 
-Against the **dead internet** risk:
+Against the **dead internet**:
 
-* Their defence is now:
+* Level 3’s defence is:
 
-  * A curated, transparent knowledge base,
-  * Cross-checked summaries and comparisons,
-  * Documented reasoning about sources.
+  * **Locally analysed project data** that AI cannot “invent”,
+  * Scripts and notebooks that show exactly how numbers are produced,
+  * A habit of saying:
+
+    * “Show me the data and the code, not just the sentence.”
 
 ---
 
-## 11. Progression to Level 3
+## 11. Progression to Level 4
 
-Once Level 2 is established, teams are ready for **Level 3 – Data & Code Augmented Analyst**, where:
+Once Level 3 is in place, teams are ready for **Level 4 – Workflow Engineer**, where:
 
-* They start working with **their own project data and code**,
-* They use tools like **Cline, Jupyter, R, and simple databases**,
-* AI helps them:
+* They move from:
 
-  * Clean and transform data,
-  * Build first analyses and visualisations,
-  * Move from “what sources say” to **what their data shows**.
+  * “We can analyse data”
+  * to
+  * **“We can build small automated workflows around our analysis.”**
 
-Level 2 prepares them by ensuring:
+In Level 4, they will:
 
-* Their conceptual and documentary foundation is strong,
-* Their project is grounded in a well-documented evidence base,
-* They already think in terms of:
+* Use tools like **n8n** and simple APIs,
+* Build repeatable pipelines (data in → clean → store → analyse → update visualisations),
+* Potentially add semantic search (e.g. vector stores) over their documents and outputs.
 
-  * Categories,
-  * Biases,
-  * Gaps,
-  * Multiple perspectives.
+Level 3 prepares them by:
+
+* Making code and data **normal** parts of their toolkit,
+* Giving them the confidence to let AI help with more complex workflows,
+* Deepening their sense that **truth in complex supply chains is triangulated**:
+
+  * Sources,
+  * Data,
+  * Code,
+  * Human judgement.
