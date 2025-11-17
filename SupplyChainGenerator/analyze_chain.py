@@ -96,14 +96,14 @@ def display_stats(stats, filepath):
 
     for tier, label, name in tier_info:
         count = stats['nodes_by_label'][label]
-        bar = "█" * min(50, count // 2)
+        bar = "#" * min(50, count // 2)
         print(f"Tier {tier} ({name:25s}): {count:4d} {bar}")
     print()
 
     print("RELATIONSHIPS BY TYPE")
     print("-" * 70)
     for rel_type, count in stats['relationships_by_type'].most_common():
-        bar = "█" * min(50, count // 20)
+        bar = "#" * min(50, count // 20)
         print(f"{rel_type:25s}: {count:4d} {bar}")
     print()
 
@@ -111,7 +111,7 @@ def display_stats(stats, filepath):
         print("TOP 10 COUNTRIES")
         print("-" * 70)
         for country, count in stats['countries'].most_common(10):
-            bar = "█" * min(40, count // 5)
+            bar = "#" * min(40, count // 5)
             print(f"{country:20s}: {count:4d} {bar}")
         print()
 
@@ -119,7 +119,7 @@ def display_stats(stats, filepath):
         print("TOP MATERIALS")
         print("-" * 70)
         for material, count in stats['materials'].most_common(10):
-            bar = "█" * min(40, count // 2)
+            bar = "#" * min(40, count // 2)
             print(f"{material:25s}: {count:4d} {bar}")
         print()
 
@@ -127,13 +127,13 @@ def display_stats(stats, filepath):
         print("TOP COMPONENT TYPES")
         print("-" * 70)
         for component, count in stats['components'].most_common(10):
-            bar = "█" * min(40, count // 2)
+            bar = "#" * min(40, count // 2)
             print(f"{component:30s}: {count:4d} {bar}")
         print()
 
     # Complexity estimate
     avg_suppliers = stats['relationship_count'] / max(1, stats['node_count']) if stats['node_count'] > 0 else 0
-    print("📈 COMPLEXITY METRICS")
+    print("COMPLEXITY METRICS")
     print("-" * 70)
     print(f"Average Suppliers per Node: {avg_suppliers:.2f}")
     print(f"Graph Density: {avg_suppliers / stats['node_count'] * 100:.4f}%" if stats['node_count'] > 0 else "N/A")
