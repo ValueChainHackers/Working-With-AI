@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SupplyChainGenerator", "SupplyChainGenerator", "{9A0F84F1-6501-1C5F-2020-B63359D45A3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplyChainGen", "SupplyChainGenerator\SupplyChainGen\SupplyChainGen.csproj", "{D148BBA7-D92B-F7D5-AF86-11ACD58C116C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D148BBA7-D92B-F7D5-AF86-11ACD58C116C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D148BBA7-D92B-F7D5-AF86-11ACD58C116C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D148BBA7-D92B-F7D5-AF86-11ACD58C116C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D148BBA7-D92B-F7D5-AF86-11ACD58C116C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D148BBA7-D92B-F7D5-AF86-11ACD58C116C} = {9A0F84F1-6501-1C5F-2020-B63359D45A3A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DE48D81-AC8C-4C15-94D2-7C711249A368}
+	EndGlobalSection
+EndGlobal
