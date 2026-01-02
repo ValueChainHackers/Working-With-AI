@@ -105,6 +105,8 @@ It's brilliant, fast, and creative... but it has no real-world knowledge and som
 **Intent:** Reframe the initial hook to align with the "aware user" concept.
 **Timing:** 2 minutes.
 **Emphasis:** The feeling of using these tools for the first time is amazing. But the "magic brain" metaphor is dangerous. A much safer and more useful metaphor is the "brilliant but untrustworthy intern." You wouldn't let an intern publish a report without checking it, right? Same thing here.
+
+**Exemplar Story:** "In 1770, a Hungarian inventor named Wolfgang von Kempelen unveiled a miraculous creation: 'The Mechanical Turk.' It was a life-sized automaton of a man in Turkish robes, sitting behind a large wooden cabinet. This machine could play a strong game of chess against a human opponent. It toured Europe for decades, defeating challengers like Napoleon Bonaparte and Benjamin Franklin. It was a sensation. People were stunned by this 'thinking machine.' It was, for them, a magic brain. The only problem? It was a complete fake. Inside the cabinet, cleverly hidden by a series of sliding panels and compartments, was a human chess master of small stature. The machine was a puppet, a brilliant illusion. This is the perfect metaphor for a Large Language Model. It *looks* like a thinking machine, it presents its answers with the confidence of a chess master, but there's no real 'mind' in there. It's just a very sophisticated mechanism reflecting the human intelligence it was trained on. And like the Turk, if you believe it without questioning the mechanism, you're not seeing the real picture. You're just part of the magic show."
 :::
 
 ## The Core Lesson: Prompting & Verification
@@ -249,6 +251,8 @@ A structured list of your sources, each with a clear summary and analysis. You c
 **Intent:** Create a strong visual metaphor for the value proposition of Level 2.
 **Timing:** 2 minutes.
 **Emphasis:** We've all been in the "pile of PDFs" situation. It's stressful and inefficient. Level 2 is about moving to a structured, orderly way of managing your information.
+
+**Exemplar Story:** "For 1,400 years, the world stared at a mountain of data it couldn't understand: Egyptian hieroglyphs. Temples, tombs, and papyri were covered in them—a massive, ancient database holding the secrets of a civilization. But it was just noise. A pile of PDFs, if you will. Scholars couldn't tell a grocery list from a royal decree. Then, in 1799, a French soldier in Egypt stumbled upon a chunk of black basalt: the Rosetta Stone. It was the ultimate cheat sheet. On it, the same decree was inscribed in three scripts: formal hieroglyphs, everyday Demotic script, and crucially, ancient Greek—a language scholars knew well. This single, curated document was the key. It was the 'source register' that allowed Jean-François Champollion, after two decades of obsessive work, to finally crack the code. He didn't just guess; he used the Rosetta Stone to ground his analysis, comparing symbols and phonetics until the system revealed itself. The stone didn't have all the answers, but it was the trusted, verifiable source that made analyzing all the *other* documents possible. This is Level 2. You stop staring at the noisy temple walls and start looking for your Rosetta Stone—that curated set of trusted documents you will use to ground your AI's analysis."
 :::
 
 ## The Core Lesson: The Source Register
@@ -377,6 +381,8 @@ A simple chart, generated in minutes, that clearly shows the most important tren
 **Intent:** Create a powerful visual hook showing the "before and after" of using AI for data analysis.
 **Timing:** 2 minutes.
 **Emphasis:** We've all been there: staring at a massive spreadsheet, feeling lost. Level 3 is about learning how to use AI as a translator between your questions and the code needed to get answers.
+
+**Exemplar Story:** "During World War II, the Allies faced a terrifying wall of data: the German Enigma code. Every day, thousands of messages, encoded by a fiendishly complex machine, were broadcast across the airwaves. The Allies knew these messages held vital secrets, but the raw data was gibberish. It was the ultimate spreadsheet from hell, and the fate of the war depended on cracking it. At Bletchley Park, a secret team of mathematicians, linguists, and engineers, led by figures like Alan Turing, were assembled. They didn't just stare at the data. They built a machine to translate it: the Bombe. The Bombe was an electromechanical codebreaker. The human operators didn't need to understand its thousands of rotating drums and wires. Their job was to describe the data, make a logical guess—like a message might contain a weather report—and ask the machine a question. The Bombe would then check millions of possibilities at incredible speed, translating the gibberish into something readable. This is exactly the workflow we're learning in Level 3. You don't have to be Alan Turing. You just have to be the operator who has a question, describes the data clearly, and asks the AI—your Bombe—to translate your question into code and give you the answer. You're moving from being a code *reader* to a code *breaker*."
 :::
 
 ## The Core Lesson: AI as a Code Translator

@@ -1,0 +1,29 @@
+---
+title: "Beer Game – Workshop Design"
+format:
+  html:
+    page-layout: full
+    toc: false
+  pdf:
+    papersize: A4
+    geometry: margin=1in
+execute:
+  echo: false
+---
+
+| **Category** | **Content** |
+|-------------|-------------|
+| **Meta Goal** | Demonstrate |
+| **Target Audience** | Professionals |
+| **Duration** | 2–4 hours |
+| **Version** | Blockchain |
+| **Competence Objective** | From unconscious incompetence to conscious incompetence |
+| **Module Objective** | At the end of the workshop, participants understand the impact of blockchain on their supply chain |
+| **Essential Questions** | • Difference between blockchain vs non-blockchain supply chains<br>• Benefits of blockchain for supply chain management |
+| **Anchor Question** | What set of technologies will revolutionize how we handle controlled logistics transactions in the coming years? |
+| **Sections** | Intro<br>Logistics<br>Use case presentation<br>Play game<br>Efficiency analysis<br>Conclusion |
+| **Teaching Tools** | PowerPoint<br>Role play<br>Readings |
+| **Teaching Situation** | Presentation<br>Whole group discussion<br>Small group discussion<br>Pairs exercise<br>Individual reading<br>Simulation<br>Roleplay |
+| **Entertainment** | Create urgency around the problem<br>Role play with delays, cheating, disorder<br>Freedom to experiment and fail |
+| **Empowerment** | Move from no blockchain knowledge to impact awareness<br>Experience blockchain dynamics<br>Fail first, then learn how to recover |
+| **Teaching Method** | Play the Beer Game<br>Efficiency analysis of a transaction process |
