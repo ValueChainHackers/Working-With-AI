@@ -1,0 +1,748 @@
+---
+title: "The AI Learning Journey"
+subtitle: "From Aware User to System Designer"
+author: "AI Instructional Designer"
+format:
+  revealjs:
+    theme: [default, styles/slides.scss]
+    slide-number: c/t
+    width: 1600
+    height: 900
+    pptx-output: true
+    logo: assets/images/logo-windesheim.png
+    pointer:
+      key: "q"
+      color: "red"
+---
+
+# Introduction
+
+## The Goal of Our Journey {background-color="#28323E"}
+
+<br>
+Our goal is to move through **five levels of AI capability**.
+
+We will go from being passive consumers of information to active, critical designers of AI-enabled systems.
+
+This is a journey of increasing agency and "truth-seeking."
+
+::: {.notes}
+**Intent:** Start with a strong, clear vision based on the `LearningYourney` document. Frame this not as a simple course, but as a developmental journey.
+**Timing:** 2 minutes.
+**Emphasis:** Welcome. We're about to embark on a journey. This isn't just about learning to use one tool. It's about developing a new set of skills and a new way of thinking. We'll track our progress through five distinct levels, starting today.
+:::
+
+## The Five Levels of AI Usage
+
+A progressive journey of capability:
+
+. . .
+
+- **Level 1: Aware Chat User**
+  - *From "AI says so" → "AI helps me start"*
+
+. . .
+
+- **Level 2: Source Curator**
+  - *From "random docs" → "my curated knowledge base"*
+
+. . .
+
+- **Level 3: Augmented Analyst**
+  - *From "text" → "my own data & code"*
+
+. . .
+
+- **Level 4: Workflow Engineer**
+  - *From "one-off tasks" → "repeatable workflows"*
+
+. . .
+
+- **Level 5: System Designer**
+  - *From "AI helps me" → "AI is part of my solution"*
+
+::: {.notes}
+**Intent:** Introduce the core framework for the entire course, taken directly from the user's `overview.md`.
+**Timing:** 2 minutes.
+**Emphasis:** This is our map. We will be working our way up this ladder. Each level builds on the last, granting you more power and requiring more critical thinking. We'll cover Levels 1 and 2 in-depth today and provide a clear path to the higher levels.
+:::
+
+# Part 1: The Foundations
+
+## Module 1: Becoming an Aware AI User (Level 1) {background-color="#447099"}
+
+**The Shift:** From "AI says so" → "AI helps me understand and find real sources."
+
+**Core Skills:**
+-   Basic, effective prompting.
+-   Verifying AI output with real sources.
+-   Seeing AI as a starting point, not a final answer.
+
+::: {.notes}
+**Intent:** Define the first module, tying it directly to the Level 1 concept.
+**Timing:** 1 minute.
+**Emphasis:** Our first step is to become an *aware* user. This means being excited by the possibilities but not naive about the risks. This level is all about learning to use AI as a smart, creative, but untrustworthy intern.
+:::
+
+## The Hook: Magic vs. Reality
+
+::: {.columns}
+:::: {.column width="50%"}
+### The "Magic Brain"
+We ask a question... a confident, well-written answer appears. It feels like magic.
+
+**The Danger:** Believing it without question.
+::::
+:::: {.column width="50%"}
+### The "Untrustworthy Intern"
+It's brilliant, fast, and creative... but it has no real-world knowledge and sometimes makes things up to please you.
+
+**The Power:** Using its output as a draft to be checked.
+::::
+:::
+
+::: {.notes}
+**Intent:** Reframe the initial hook to align with the "aware user" concept.
+**Timing:** 2 minutes.
+**Emphasis:** The feeling of using these tools for the first time is amazing. But the "magic brain" metaphor is dangerous. A much safer and more useful metaphor is the "brilliant but untrustworthy intern." You wouldn't let an intern publish a report without checking it, right? Same thing here.
+:::
+
+## The Core Lesson: Prompting & Verification
+
+Your two core skills at Level 1 are **Prompting** and **Verifying**.
+
+. . .
+
+1.  **Prompting:** Give clear, contextual instructions. We'll use the **CARE** framework.
+
+. . .
+
+2.  **Verifying:** Check the AI's claims against real, primary sources.
+
+This is the fundamental workflow of an aware AI user.
+
+::: {.notes}
+**Intent:** State the core lesson of Level 1 clearly, breaking it into two distinct points.
+**Timing:** 1 minute.
+**Emphasis:** This is the foundational loop. Prompt, get an output, and then go verify it. Never skip the second step.
+:::
+
+## The CARE Prompting Framework
+
+The best prompts give the AI everything it needs. To do this, we provide four kinds of information.
+
+---
+
+### C: Context
+
+Give the background information. Set the scene. Tell the AI what role to play.
+
+> **"You are an expert financial analyst..."**
+
+---
+
+### A: Ask
+
+State the specific task. What, exactly, do you want the AI to do?
+
+> **"...Explain the concept of 'net present value'..."**
+
+---
+
+### R: Rules
+
+Define the constraints. What format, length, or style should the AI follow?
+
+> **"...Explain it in simple terms for a non-financial audience, under 200 words..."**
+
+---
+
+### E: Examples
+
+(Optional) Provide a model of the desired output. Show, don't just tell.
+
+> **"...For example, start with an analogy like 'a dollar today is worth more than a dollar tomorrow.'"**
+
+::: {.notes}
+**Intent:** Break the CARE framework into four separate, digestible slides. This gives each concept space and prevents overflow.
+**Timing:** 4 minutes (1 per slide).
+**Emphasis:** We'll go through this one by one. Each part you add to your prompt makes the AI's job easier and your result better.
+:::
+
+## Exercise: Applying CARE
+
+**Goal:** Use CARE to get a clear explanation of a complex topic.
+
+**On-Slide Task:**
+1.  **Choose a topic** (e.g., 'Scope 3 emissions', 'circular economy').
+2.  **Craft a CARE prompt** for a specific audience.
+3.  **Run the prompt** in an AI tool.
+
+::: {.notes}
+**Intent:** Provide a flexible exercise for learners to practice CARE in their own domain.
+**Timing:** 5 minutes.
+**Emphasis:** The detailed prompt from the last version is in your notes here: `You are a sustainability consultant. Explain 'Scope 3 emissions' to a group of supply chain managers in simple, actionable terms. The explanation should be in three paragraphs.`. Encourage learners to build their own. The key is to practice, even with a simple topic.
+:::
+
+## The "Sharp Edge" at Level 1: Hallucinations
+
+**The Risk:** AI models confidently invent facts, sources, and data. They "hallucinate" because they are just predicting the next likely word, not stating known facts.
+
+---
+
+## The Truth-Seeking Angle (Level 1)
+
+An aware user knows that **Truth = AI Answer + Verification.**
+
+Your first defense against a "dead internet" of fake content is to **always click the link and check the source.**
+
+::: {.notes}
+**Intent:** Split the risk and the solution into two slides for clarity.
+**Timing:** 2 minutes.
+**Emphasis:** First, understand the risk: the AI will lie. Now, understand your defense: you are the fact-checker. This is the core discipline of a Level 1 user.
+:::
+
+## The Empowering Takeaway (Level 1)
+
+> I am no longer just a passive searcher. I am an active investigator who uses AI to generate hypotheses and starting points, which I then confirm with real evidence.
+
+This is the first step to taking control.
+
+::: {.notes}
+**Intent:** Summarize the shift in identity and skill for Level 1.
+**Timing:** 1 minute.
+**Emphasis:** You've made a huge shift. You've gone from taking information as given to actively constructing and verifying your understanding. This is the foundation for everything that follows.
+:::
+
+---
+
+## Module 2: Becoming a Source Curator (Level 2) {background-color="#447099"}
+
+**The Shift:** From "random docs" → "my own curated, documented knowledge base."
+
+**Core Skills:**
+-   Systematic source collection and maintenance.
+-   Using AI to analyze your curated sources.
+
+::: {.notes}
+**Intent:** Define the second module, tying it directly to the Level 2 concept.
+**Timing:** 1 minute.
+**Emphasis:** Welcome to Level 2. At Level 1, we found sources to check the AI. At Level 2, we flip that. We start with a collection of trusted sources and use the AI to help us understand them more deeply.
+:::
+
+## The Hook: A Pile of PDFs vs. A Knowledge Base
+
+::: {.columns}
+:::: {.column width="50%"}
+### The Chaos
+
+A folder full of randomly named PDFs. You know the information is in there somewhere... but where?
+::::
+:::: {.column width="50%"}
+### The Order
+
+A structured list of your sources, each with a clear summary and analysis. You can find what you need in seconds.
+::::
+:::
+
+::: {.notes}
+**Intent:** Create a strong visual metaphor for the value proposition of Level 2.
+**Timing:** 2 minutes.
+**Emphasis:** We've all been in the "pile of PDFs" situation. It's stressful and inefficient. Level 2 is about moving to a structured, orderly way of managing your information.
+:::
+
+## The Core Lesson: The Source Register
+
+A Source Register is a simple table where you track your sources. You use AI to help you fill in the summary column for each trusted document.
+
+| Source | Organization | AI-Generated Summary |
+|---|---|---|
+| "Future of Supply Chains Report" | Deloitte | AI helps draft a summary of key tech trends and predictions. |
+| "EU Deforestation Regulation (EUDR)" | EU Parliament | AI helps explain the core compliance requirements for businesses. |
+
+
+::: {.notes}
+**Intent:** Introduce the "Source Register" as the core practical tool for Level 2.
+**Timing:** 3 minutes.
+**Emphasis:** This is the key tool for Level 2. It's simple but powerful. For every document you decide is important, you add it to your register and use AI to summarize it. This act forces discipline.
+:::
+
+## Advanced Use: AI as a Supply Chain Analyst
+
+Once you have a curated knowledge base, you can perform powerful analysis.
+
+---
+
+### Advanced Prompt: Compare/Contrast
+
+> "Using the attached documents (EUDR and a company's sustainability report), identify the key differences between the regulation's requirements and the company's stated policies."
+
+---
+
+### Advanced Prompt: Find Gaps
+
+> "Based on these three supplier audit reports, what common themes or risks emerge? What key compliance areas seem to be missing from all three?"
+
+---
+
+### Advanced Prompt: Synthesize
+
+> "Synthesize the key recommendations from these five analyst reports on cobalt sourcing into a single, actionable bulleted list for our procurement team."
+
+::: {.notes}
+**Intent:** Break the advanced prompts into three separate, focused slides.
+**Timing:** 3 minutes (1 per slide).
+**Emphasis:** This is where Level 2 gets really powerful. You're no longer just asking the AI about general knowledge. You're asking it to perform specific analytical tasks on *your* trusted set of documents.
+:::
+
+## Exercise: Build a Mini-Knowledge Base
+
+**Goal:** Use AI to analyze a small, curated set of sources on a supply chain topic.
+
+**Your Task:**
+1.  Given three short texts on cobalt mining.
+2.  Create a Source Register for them.
+3.  Ask the AI to synthesize points of agreement and disagreement.
+4.  Verify the AI's answer.
+
+::: {.notes}
+**Intent:** A practical, hands-on exercise to simulate the Level 2 workflow. The detailed prompt is in your notes: `"Using only the three provided texts on cobalt mining, what is the main point of agreement between them regarding environmental impact? What is the main point of disagreement regarding labor practices?"`
+**Timing:** 10 minutes.
+**Emphasis:** Let's try this in a controlled way. The key is to direct the AI to work *only* with the documents you provide. This keeps it grounded in your curated reality.
+:::
+
+## The "Sharp Edge" at Level 2: Bias Amplification
+
+**The Risk:** If your curated source library is biased (e.g., all from one perspective), the AI's analysis will reflect and potentially amplify that bias.
+
+---
+
+## The Truth-Seeking Angle (Level 2)
+
+Truth is **triangulated across multiple, diverse, documented sources.**
+
+Your defense is to be a **conscious curator.** Actively seek out different and opposing viewpoints for your knowledge base.
+
+::: {.notes}
+**Intent:** Split the risk and solution into two slides.
+**Timing:** 2 minutes.
+**Emphasis:** At Level 2, the risk of hallucination goes down, but the risk of bias goes up. Your responsibility shifts from fact-checker to librarian. Are you building a diverse library or an echo chamber?
+:::
+
+## The Empowering Takeaway (Level 2)
+
+> I am a curator and sense-maker. I build my own trusted libraries and use AI as an analyst to help me find the patterns, connections, and gaps within them.
+
+::: {.notes}
+**Intent:** Summarize the identity shift for Level 2.
+**Timing:** 1 minute.
+**Emphasis:** This is a major step up. You are actively building the 'ground truth' that you will work from. You are in control of the library.
+:::
+
+---
+
+# Part 2: Working with Your Own Data
+
+## Module 3: Becoming an Augmented Analyst (Level 3) {background-color="#447099"}
+
+**The Shift:** From analyzing text → analyzing **your own data and code.**
+
+**Core Skills:**
+-   Using AI as a coding assistant.
+-   Generating simple scripts for data analysis.
+-   Creating plots and tables as verifiable evidence.
+
+::: {.notes}
+**Intent:** Introduce the next major leap: working with structured data and code.
+**Timing:** 1 minute.
+**Emphasis:** Welcome to Level 3. So far, we've worked with text. Now, we're going to use AI to work with our own project data to generate new evidence.
+:::
+
+## The Hook: Spreadsheet Hell vs. Instant Insight
+
+::: {.columns}
+:::: {.column width="50%"}
+### The Wall of Data
+
+A 10,000-row CSV file. The answer is in there, but finding it feels impossible.
+::::
+:::: {.column width="50%"}
+### The Revealing Chart
+
+A simple chart, generated in minutes, that clearly shows the most important trend.
+::::
+:::
+
+::: {.notes}
+**Intent:** Create a powerful visual hook showing the "before and after" of using AI for data analysis.
+**Timing:** 2 minutes.
+**Emphasis:** We've all been there: staring at a massive spreadsheet, feeling lost. Level 3 is about learning how to use AI as a translator between your questions and the code needed to get answers.
+:::
+
+## The Core Lesson: AI as a Code Translator
+
+You don't need to be an expert coder. You need to be an expert at **describing your data and your goal.**
+
+The AI translates your plain-English request into code. You run the code and check the output.
+
+---
+
+### The Code Translator Workflow
+
+1.  **Describe:** Tell the AI about your data (e.g., columns, data types).
+2.  **Ask:** Ask a clear question in plain English.
+3.  **Generate:** AI provides a code snippet.
+4.  **Run & Review:** You run the code and review the output for common sense.
+
+::: {.notes}
+**Intent:** Break the workflow into a separate slide.
+**Timing:** 3 minutes.
+**Emphasis:** This is the crucial concept for Level 3. You are the project manager; the AI is the junior developer. You provide the instructions and review the work.
+:::
+
+## DEMO: Data-to-Plot Challenge
+
+**Goal:** Take a simple shipment dataset and create a chart.
+
+**Data:** `shipment_data.csv` with columns: `Origin`, `Destination`, `Carrier`, `Cost`, `ShipmentDate`.
+
+---
+
+### DEMO: Step 1 (Understand)
+
+**Prompt:**
+`"I have a CSV file with columns 'Origin', 'Destination', 'Carrier', 'Cost', 'ShipmentDate'. Write a Python script to load this file and show me the first 5 rows."`
+
+---
+
+### DEMO: Step 2 (Analyze)
+
+**Prompt:**
+`"Great. Now, write a script to calculate the average 'Cost' for each 'Carrier'."`
+
+---
+
+### DEMO: Step 3 (Visualize)
+
+**Prompt:**
+`"Excellent. Now, create a bar chart showing the average cost by carrier. Make the chart title 'Average Shipment Cost by Carrier'."`
+
+::: {.notes}
+**Intent:** Break the demo into sequential steps, each on its own slide.
+**Timing:** 3 minutes (1 per slide).
+**Emphasis:** Watch how the conversation builds. We go from understanding the data, to analyzing it, to visualizing it. Each step is a simple, clear request.
+:::
+
+## The "Sharp Edge" at Level 3: Flawed Code
+
+**The Risk:** The AI can write code that runs but is subtly wrong (e.g., misinterpreting data types, using the wrong formula).
+
+---
+
+## The Truth-Seeking Angle (Level 3)
+
+Truth is what survives both **source checks (L2)** and **data analysis (L3).** The code and its output are now a primary source of evidence you must inspect.
+
+Your defense is **"code review with common sense."** Does the output look plausible?
+
+::: {.notes}
+**Intent:** Split the risk and solution.
+**Timing:** 2 minutes.
+**Emphasis:** The risk changes. It's not just fake text, it's flawed logic. Your job is not to be a master coder, but a skeptical reviewer. Does the result pass the common-sense test?
+:::
+
+## The Empowering Takeaway (Level 3)
+
+> I can interrogate my own data to generate verifiable evidence. I can use AI to explore numbers and create data-driven insights, even without being a coding expert.
+
+::: {.notes}
+**Intent:** Summarize the powerful identity shift for Level 3.
+**Timing:** 1 minute.
+**Emphasis:** You are now creating your own evidence directly from raw data. You are moving from a consumer of information to a producer of it.
+:::
+
+# Part 3: Building Repeatable Systems
+
+## Module 4: The Workflow Engineer (Level 4) {background-color="#447099"}
+
+**The Shift:** From "one-off tasks" → **"repeatable, automated workflows."**
+
+**Core Skills:**
+-   Thinking in "Triggers, Steps, and Outputs."
+-   Mapping manual processes for automation.
+
+::: {.notes}
+**Intent:** Introduce the concept of automation and workflow thinking.
+**Timing:** 1 minute.
+**Emphasis:** Welcome to Level 4. We've been doing everything manually. Now we learn to build simple automations that run on their own. This is where we get our time back at scale.
+:::
+
+## The Hook: The Agony of the Weekly Logistics Report
+
+Imagine it's Friday at 4 PM. You have to manually:
+1.  Download weekly carrier performance data.
+2.  Find and copy data for delayed shipments.
+3.  Summarize reasons for delays.
+4.  Post the summary to the team's channel.
+
+This is a perfect target for automation.
+
+::: {.notes}
+**Intent:** Use a universally painful and relatable example to motivate the need for workflow automation.
+**Timing:** 2 minutes.
+**Emphasis:** We all have tasks like this. They are low-value, repetitive, and drain our energy. These are the tasks that are ripe for a Level 4 workflow.
+:::
+
+## The Core Lesson: Think Like an Engineer
+
+Engineers don't just do tasks; they build processes. You can too.
+
+---
+
+### Step 1: The Trigger
+
+What starts the process?
+
+> **e.g., "A new email arrives with 'Weekly Report' in the subject."**
+
+---
+
+### Step 2: The Steps
+
+What actions are performed?
+
+> **1. Extract the attachment.**
+> **2. Get the data.**
+> **3. Call AI to summarize the data.**
+> **4. Format the AI's response.**
+
+---
+
+### Step 3: The Output
+
+What is the final result?
+
+> **e.g., "Post the formatted summary to the #sales channel in Teams."**
+
+::: {.notes}
+**Intent:** Break the Trigger-Steps-Output model into separate slides.
+**Timing:** 3 minutes.
+**Emphasis:** This is the core mental model for Level 4. Every process can be broken down this way. This lets you see your work as a series of systems you can design.
+:::
+
+## Exercise: Design a Personal Workflow
+
+**Goal:** Map a repetitive task and design an automation for it on paper.
+
+**Your Task:**
+1.  **Choose a task** you do regularly.
+2.  **Map it out:** Write down the Trigger, the Steps, and the Output.
+3.  **Identify the AI step:** Where could an AI make this workflow smarter?
+
+::: {.notes}
+**Intent:** A non-technical exercise that teaches the core skill of workflow design. The detailed examples are in your notes: *Student Example: Get a daily alert with the latest price of a specific commodity (e.g., cobalt, lithium) and use an AI to summarize any news related to its pricing. Professional Example: Monitor a specific list of suppliers. When a news article mentions a supplier, save the article and use an AI to classify its sentiment (positive, negative, neutral).*
+**Timing:** 10 minutes.
+**Emphasis:** The most important work happens on paper. The goal is to develop the habit of seeing your work as a process.
+:::
+
+## The "Sharp Edge" at Level 4: Silent Failures
+
+**The Risk:** Your automation might fail silently. The trigger might not fire or an API call might return an error, and you won't know it. Decisions could be made on bad or outdated data.
+
+---
+
+## The Truth-Seeking Angle (Level 4)
+
+Truth is supported by **stable, inspectable pipelines.** An automation is not a "fire and forget" magic box.
+
+Your defense is **monitoring and logging.** Your workflow needs a final step: "Send a notification upon success or failure."
+
+::: {.notes}
+**Intent:** Split risk and solution.
+**Timing:** 2 minutes.
+**Emphasis:** The risk is now more subtle. It's not a wrong answer, but a process that fails without telling you. Trust in your automation is only earned through verification.
+:::
+
+## The Empowering Takeaway (Level 4)
+
+> I am a workflow engineer. I don't just perform tasks; I design and automate processes. I can build systems that work for me, freeing my energy for higher-value problems.
+
+::: {.notes}
+**Intent:** Summarize the powerful identity shift for Level 4.
+**Timing:** 1 minute.
+**Emphasis:** This is a profound shift. You're moving from being an actor *in* the process to being the designer *of* the process.
+:::
+
+---
+
+## Module 5: The System Designer (Level 5) {background-color="#447099"}
+
+**The Shift:** From "AI helps me" → **"AI is part of my solution for others."**
+
+**Core Skills:**
+-   Thinking about user needs & socio-technical systems.
+-   Understanding basic AI architectures (like RAG).
+-   Designing for trust and human oversight.
+
+::: {.notes}
+**Intent:** Introduce the final level of the journey: building tools for other people.
+**Timing:** 1 minute.
+**Emphasis:** Welcome to the final level. We now turn outward. We use our skills to build simple AI-enabled solutions that help our team, our clients, or our community.
+:::
+
+## The Hook: Personal Hack vs. Team Solution
+
+::: {.columns}
+:::: {.column width="50%"}
+### Your Personal Workflow (L4)
+You have a clever workflow that automatically summarizes industry news for you every morning.
+
+**It's a personal productivity hack.**
+::::
+:::: {.column width="50%"}
+### The Team's Solution (L5)
+You build a simple chatbot for your team. Anyone can now ask it: `"What's the latest news on Competitor X?"` and get a summarized answer, with sources.
+
+**It's a shared, scalable capability.**
+::::
+:::
+
+::: {.notes}
+**Intent:** Show the evolution from a personal hack to a scalable team solution.
+**Timing:** 2 minutes.
+**Emphasis:** Look at the difference. One is a great trick to make your own life easier. The other is a tool that empowers your entire team. This is the essence of the Level 5 shift.
+:::
+
+## The Core Lesson: Designing for Trust
+
+When you build for others, the most important feature is **Trust**.
+
+---
+
+### Designing for Trust 1: Ground the AI
+
+Don't let the AI answer from its general knowledge. Force it to answer *only* from a specific set of documents you provide.
+
+This is called **Retrieval-Augmented Generation (RAG)**.
+
+---
+
+### Designing for Trust 2: Show Your Work
+
+The AI must always cite its sources. Every answer should come with a footnote:
+
+> "I got this information from [Document A, page 4]."
+
+---
+
+### Designing for Trust 3: Provide an "Eject Button"
+
+The user must always be in control. They need to be able to see the source, question the AI's logic, and override its conclusion.
+
+This is "Human-in-the-Loop" design.
+
+::: {.notes}
+**Intent:** Break the three "Designing for Trust" points into separate slides.
+**Timing:** 3 minutes.
+**Emphasis:** These are the three pillars of a trustworthy AI system. Ground it in facts, make it show its sources, and always let the human have the final say.
+:::
+
+## Reflection: Design a Simple AI Tool
+
+**Goal:** Scope out a useful AI tool for a specific user.
+
+**Scenario:**
+-   **User:** A purchasing manager at a coffee company.
+-   **Problem:** They need to verify if a new supplier complies with the EU Deforestation Regulation (EUDR).
+-   **Your Task:** What documents would the AI need? How would it cite its sources to be trustworthy?
+
+::: {.notes}
+**Intent:** A final reflection exercise to get learners thinking like a Level 5 designer.
+**Timing:** 5 minutes.
+**Emphasis:** Let's dream a little. Think of a real problem you or your team faces. If you could build a simple AI assistant to solve it, what would it look like? Who would it help? And most importantly, how would you make it trustworthy?
+:::
+
+## The "Sharp Edge" at Level 5: Systemic Risk
+
+**The Risk:** A flaw in your system (a bias in the RAG library, a bug in the logic) doesn't just affect you; it affects **all users**. This can lead to systematically unfair or wrong outcomes at scale.
+
+---
+
+## The Truth-Seeking Angle (Level 5)
+
+Truth is co-created by **users + data + sources + AI**, with evidence always visible and challengeable. The system must be designed for transparency and correction.
+
+Your defense is **good design and governance.**
+
+::: {.notes}
+**Intent:** Split the risk and solution.
+**Timing:** 2 minutes.
+**Emphasis:** At this level, the stakes are highest. A bug in your personal script is an annoyance. A bug in a system used by 100 people is a major problem. This is why thinking about governance and feedback loops is a core part of the design process.
+:::
+
+## The Empowering Takeaway (Level 5)
+
+> I am a socio-technical system designer. I can use AI as a component in a larger solution that empowers others. I design for trust, transparency, and human oversight.
+
+::: {.notes}
+**Intent:** Summarize the final identity shift in the journey.
+**Timing:** 1 minute.
+**Emphasis:** This is the peak of our journey. You've gone from a user of AI to a creator of AI-enabled solutions. You're not just thinking about features; you're thinking about impact and responsibility.
+:::
+
+---
+
+# Conclusion
+
+## Your Learning Journey Recap {background-color="#28323E"}
+
+We've travelled from Level 1 to 5. Let's recap the identity shift at each stage.
+
+---
+
+### Level 1: The Aware User
+
+You prompt and, most importantly, you verify.
+
+---
+
+### Level 2: The Curator
+
+You build and analyze your own trusted knowledge base.
+
+---
+
+### Level 3: The Analyst
+
+You interrogate your own data and generate new evidence.
+
+---
+
+### Level 4: The Engineer
+
+You design and automate processes to work for you.
+
+---
+
+### Level 5: The Designer
+
+You build trusted, AI-enabled solutions that empower others.
+
+::: {.notes}
+**Intent:** Break the recap into five distinct, quick slides to reinforce the identity shift at each level.
+**Timing:** 2 minutes.
+**Emphasis:** Let's look back at how far we've come. Each level gave you more power and more responsibility. This framework is your guide for continuing to learn.
+:::
+
+## Thank You! {background-color="#4A525A"}
+
+<br>
+<br>
+
+**Good luck on your continued AI journey!**
+
+::: {.notes}
+**Intent:** End on a positive and encouraging note.
+**Timing:** 1 minute.
+**Emphasis:** Thank you for your time and participation. This is an exciting field, and you now have a map to navigate it effectively and responsibly. Good luck.
+:::

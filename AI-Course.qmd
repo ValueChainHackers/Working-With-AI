@@ -1,0 +1,459 @@
+---
+title: "AI for Researchers"
+subtitle: "From Foundations to Application"
+author: "C.G Verhoef"
+date: "today"
+format:
+  revealjs: 
+    theme: [default, assets/slides.scss]
+    slide-number: c/t
+    html-math-method: katex
+    height: 900
+    width: 1600
+    auto-stretch: false
+    touch: true
+    fig-align: "center"
+    chalkboard: 
+      buttons: false
+      theme: whiteboard
+    pointer:
+      key: "q"
+      color: "green"
+      pointerSize: 16
+      alwaysVisible: false
+    highlight-style: github
+    code-line-numbers: false
+    callout-appearance: minimal
+    template-partials:
+      - assets/title-slide.html
+    center-title-slide: true
+    title-slide-attributes:
+        data-background-image: "assets/images/logo.png"
+        data-background-size: 15%
+        data-background-opacity: "1"
+        data-background-position: top-right
+revealjs-plugins:
+  - pointer
+---
+
+# Module 1: Getting Started
+
+## Welcome & Today's Goal {background-color="#447099"}
+
+<br>
+<br>
+
+**Our Goal:** To explore how AI can become your **research assistant**, helping you work smarter, not harder.
+
+::: {.notes}
+Welcome everyone. Over the next hour, we're going to demystify AI and give you practical skills to use it effectively in your research. We're not here to talk about hype; we're here to get hands-on and see how these tools can make a real difference in your day-to-day work.
+:::
+
+## Learning Objectives
+
+. . .
+
+By the end of this module, you will be able to:
+
+- **Articulate** why AI is relevant to your research process.
+- **Define** Generative AI with a simple metaphor.
+- **Navigate** the basic features of our OpenWebUI environment.
+- **Execute** your first successful prompt.
+
+::: {.notes}
+Let's start by setting some clear goals for this first section. We'll cover the 'why', the 'what', and the 'how' to get you started on solid ground. The main goal here is to get you comfortable and confident enough to run your first simple task.
+:::
+
+## The Challenge for Researchers
+
+::: {.columns}
+:::: {.column width="50%"}
+### The Problem
+
+- 📄 Hours spent on tedious literature reviews.
+- 🗂️ Unstructured notes that are hard to organize.
+- 🚫 Writer's block when drafting a new section.
+- ⏰ Time wasted on repeatable, non-creative tasks.
+::::
+:::: {.column width="50%"}
+### The Promise
+
+- **Accelerate** the boring parts of research.
+- **Synthesize** complex information in minutes.
+- **Structure** your thoughts into a clear outline.
+- **Focus** on the original, high-impact work only you can do.
+::::
+:::
+
+::: {.notes}
+Does this feel familiar? The daily grind of research involves a lot of tasks that are necessary but not exactly where we add the most value. We're going to explore how AI can help automate or speed up the left side, so you can spend more time on the right side: thinking, analyzing, and creating.
+:::
+
+## What is Generative AI?
+
+A simple metaphor:
+
+> It's **autocomplete on steroids**.
+
+It predicts the next most likely word based on patterns in the massive amount of text it was trained on. It doesn't *understand* things, but it's incredibly good at mimicking structure, style, and language.
+
+::: {.notes}
+Let's demystify the term 'Generative AI'. Forget complex definitions. The easiest way to think about it is as a super-advanced prediction engine. Just like your phone suggests the next word, AI suggests the next sentence, or the next paragraph. This is key to understanding both its power and its limitations. It's a pattern-matcher, not a thinking machine.
+:::
+
+## Our Workspace: OpenWebUI
+
+A safe, private environment for our research experiments.
+
+::: {.columns}
+:::: {.column width="60%"}
+![A screenshot of the OpenWebUI interface, showing the chat window, model selector, and file upload area.](assets/images/openwebui-interface.png){fig-align=center}
+::::
+:::: {.column width="40%"}
+**Key Features:**
+
+1.  **Chat Interface:** Where you write prompts.
+2.  **Model Selector:** Choose your AI 'brain'.
+3.  **File Upload:** Give the AI context.
+4.  **Chat History:** Your conversations are saved.
+::::
+:::
+
+::: {.notes}
+This is our sandbox for today. OpenWebUI gives us a private, controlled space. You don't have to worry about your data being used for training or shared publicly. Take a moment to find the key features I've pointed out. We'll be using the chat interface and file upload features in our exercises.
+:::
+
+## ⚠️ Key Limitation: Hallucinations
+
+AI models can **confidently invent facts, citations, or data**. They 'hallucinate'.
+
+> **Example:** An AI might recommend eating one small rock per day for vitamin intake, citing a non-existent medical journal.
+
+**Rule #1 of AI:** **ALWAYS VERIFY.**
+
+::: {.notes}
+Before we even write our first prompt, we need to cover the single most important limitation: hallucinations. Because the AI is just predicting the next word, it can very convincingly make things up. It might sound authoritative, but it could be complete nonsense. This is why you, the researcher, are still the most important part of the process. Your critical eye is non-negotiable.
+:::
+
+## EXERCISE: Your First Prompt
+
+Let's try a simple, safe task.
+
+1.  Go to the OpenWebUI chat window.
+2.  Select a model from the dropdown.
+3.  Type the following prompt and press Enter:
+
+```
+Summarize the key challenges in supply chain finance in three bullet points.
+```
+4.  Read the response. Does it seem plausible?
+
+::: {.notes}
+Okay, it's time to get your hands dirty. This first exercise is just about getting comfortable with the interface. Type the prompt exactly as shown. The goal is simply to interact with the AI and see what it produces. We're not judging the quality of the output just yet, just getting a feel for the process.
+:::
+
+# Module 2: Prompting
+
+## Learning Objectives {background-color="#447099"}
+
+. . .
+
+By the end of this module, you will be able to:
+
+- **Differentiate** between a poor prompt and an effective one.
+- **Apply** the CARE method (Context, Ask, Rules, Examples) to structure your prompts.
+- **Use** AI for four core research tasks: Summarization, Exploration, Structuring, and Drafting.
+
+::: {.notes}
+Now that you've had a first taste, let's get into the most important skill for working with AI: prompting. This module is all about learning how to ask questions in a way that gets you useful, reliable results. We'll learn a simple framework and then apply it to some common research tasks.
+:::
+
+## From Bad... to Better
+
+Imagine your AI assistant is **LogiBot**, and it's gone rogue, giving terrible advice.
+
+::: {.columns}
+:::: {.column width="50%"}
+### The Bad Prompt
+`"Fix the supply chain."`
+
+**LogiBot's Bad Answer:**
+*"Just ship everything by drone tomorrow. If that fails, tell customers to switch to tea instead."*
+
+(Unrealistic, ignores the actual problem)
+::::
+:::: {.column width="50%"}
+### The Better Prompt
+`"Given a port strike in Europe, what alternative transport routes could maintain supply to Asia? List three options with pros and cons for each."`
+
+**A Better Answer:**
+*1. Air Freight: Fast, but expensive...*
+*2. Rail via land bridge: Cheaper than air, but slower...*
+*3. Sea route around Africa: Avoids the strike, but adds weeks to shipping time...*
+::::
+:::
+
+::: {.notes}
+The quality of your output depends almost entirely on the quality of your input. A vague prompt gets a useless, vague, or even ridiculous answer. A specific, contextualized prompt gets a specific, useful answer. Look at the difference here. The better prompt provides context (port strike), specifies the goal (maintain supply to Asia), and sets rules for the output (three options, pros and cons).
+:::
+
+## The CARE Prompting Method
+
+The best prompts give the AI everything it needs to succeed. Just remember to **CARE**.
+
+- **C**ontext: The background information. What does the AI need to know?
+- **A**sk: The specific task. What do you want it to do?
+- **R**ules: The constraints. What format, length, or style should it follow?
+- **E**xamples: The desired output. Show it what a good answer looks like.
+
+::: {.notes}
+Here is a simple framework to help you build effective prompts every time. CARE. Before you hit enter, ask yourself: Have I given the AI enough Context? Is my Ask clear? Have I set Rules for the output? Could I provide an Example of what I want? You don't always need all four, but thinking through them will dramatically improve your results.
+:::
+
+## DEMO: Applying CARE
+
+Let's build a prompt together.
+
+**Goal:** Get a summary of a research paper's abstract.
+
+- **C**ontext: "You are a research assistant. The following text is a research abstract."
+- **A**sk: "Summarize this abstract."
+- **R**ules: "The summary must be under 150 words and include the main objective, method, and key finding."
+- **E**xample: (Optional for this task, as it's straightforward)
+
+**Final Prompt:**
+`You are a research assistant. Summarize the following abstract in under 150 words. The summary must include the main objective, the method, and the key finding.`
+`[Paste abstract here]`
+
+::: {.notes}
+I'll demonstrate how this works in practice. I'm going to take an abstract, and instead of just saying "summarize this," I'm going to build a CARE prompt. I'll define the persona, state the context, give it a clear task, and set rules for the output. Watch how the result is much more structured and useful than if I had used a simple, one-line prompt.
+:::
+
+## TASK 1: Summarization
+
+**Goal:** Create a clear, concise summary of a research abstract.
+
+1.  **Find** a research abstract in your field.
+2.  **Upload** it or paste it into OpenWebUI.
+3.  **Use** a CARE prompt to ask for a summary.
+    - **Context:** "You are a research assistant..."
+    - **Ask:** "Summarize this..."
+    - **Rules:** "...in 150 words, capturing the main question, method, and findings."
+4.  **Review** the result. How did it do?
+
+::: {.notes}
+Your turn. Find an abstract from a paper you know. Use the prompt structure we just discussed to ask for a summary. The key here is to practice applying the 'Rules' part of the CARE framework. Don't just ask for a summary; ask for a summary of a specific length that contains specific elements. Then, critically evaluate the output.
+:::
+
+## TASK 2: Exploration
+
+**Goal:** Ask deeper questions about a research document.
+
+1.  **Upload** a full paper or report you are familiar with.
+2.  **Ask** targeted questions using CARE prompts:
+    - *"What is the main research question and why does it matter, according to the introduction?"*
+    - *"List the datasets and methods used, as described in the methodology section."*
+    - *"Extract the three key findings from the results section, with supporting quotes."*
+3.  **Verify** the AI's answers against the source document.
+
+::: {.notes}
+Now let's go beyond summarization. The real power of AI in research is for exploration. Take a paper and ask it specific, targeted questions. Notice how these prompts are much more powerful than "what is this paper about?". We're directing the AI to specific sections and asking it to perform specific tasks, like listing or extracting. Remember Rule #1: Always verify the answers.
+:::
+
+## TASK 3: Structuring Notes
+
+**Goal:** Turn unstructured text into a clean, reusable table.
+
+1.  **Upload** a chunk of text from your notes or a paper.
+2.  **Ask** OpenWebUI to structure it.
+
+**Prompt:**
+`Organize the key concepts from the following text into a Markdown table with three columns: "Concept", "Definition", and "Example from Text".`
+`[Paste text here]`
+
+3.  **Review** the table. Is it accurate? Can you copy and paste it into your own work?
+
+::: {.notes}
+This is one of the most practical, time-saving uses of AI. We all have messy notes. This exercise shows you how to get the AI to do the tedious work of organizing them. The key is specifying the exact format you want, in this case, a Markdown table with specific column headers. This makes the output immediately usable.
+:::
+
+## TASK 4: Drafting
+
+**Goal:** Use AI to create a *first draft* of a section, based on evidence.
+
+1.  **Upload** a paper or your structured notes from the previous task.
+2.  **Ask** the AI to draft a short section.
+
+**Prompt:**
+`Using ONLY the information provided in the uploaded document, draft a 200-word "Background" section for a research paper. It should introduce the topic, state the main problem, and lead into the research question. Use placeholders like [Author, Year] for citations.`
+
+3.  **Review** the draft. Does it stick to the source material?
+
+::: {.notes}
+Let's tackle writing. The key here is to use the AI as a starting point, not a final writer. This prompt is carefully constructed to be safe. We're telling it to ONLY use the information we provided, which reduces the risk of hallucination. We are also asking for citation placeholders, reminding ourselves that we need to add the real references. Never copy-paste AI-generated text into your work without a thorough review and editing process.
+:::
+
+# Module 3: The Bigger Picture
+
+## Learning Objectives {background-color="#447099"}
+
+. . .
+
+By the end of this module, you will be able to:
+
+- **Identify** real-world applications for AI in research.
+- **Recognize** the impact of AI in fields like supply chain management.
+- **Discuss** the ethical implications of AI, including bias and privacy.
+
+::: {.notes}
+We've focused on the 'how'. Now let's zoom out to the 'what' and 'why'. In this module, we'll look at how these skills apply to the bigger picture of your research and the world around us. We'll also touch on some of the critical ethical considerations you need to be aware of.
+:::
+
+## Real-World Use Cases
+
+How can AI support the research lifecycle?
+
+::: {.columns}
+:::: {.column width="33%"}
+### 📚 Literature Review
+
+- **Summarize** papers quickly.
+- **Compare** methods across studies.
+- **Organize** findings into themes.
+::::
+:::: {.column width="33%"}
+### 📊 Data Support
+
+- **Explain** complex methods in plain language.
+- **Suggest** visualizations for your data.
+- **Document** your analysis steps.
+::::
+:::: {.column width="33%"}
+### 🤝 Collaboration
+
+- **Draft** shared notes after meetings.
+- **Summarize** long email threads.
+- **Translate** text for international partners.
+::::
+:::
+
+::: {.notes}
+The tasks we practiced—summarizing, exploring, structuring—are the building blocks for these larger research activities. You can see how speeding up these micro-tasks can have a huge impact on the macro-level process, from literature reviews to collaborating with your team.
+:::
+
+## Case Study: AI in Supply Chains
+
+AI isn't just academic. It's transforming industries.
+
+- **Amazon** uses AI to forecast demand for 400M+ products.
+- **DHL** uses AI to predict shipping delays and reroute freight.
+- **Maersk** uses AI to reduce vessel downtime and cut CO₂ emissions.
+
+This shows the power of using data and predictive models to make better, faster decisions.
+
+::: {.notes}
+Let's look at a real-world example from supply chain management. Companies like Amazon and DHL are using AI on a massive scale to do things that are conceptually similar to what we've just practiced: they take in data (context), ask questions (ask), and generate predictions or plans (output). This is a great illustration of how these skills are relevant beyond academia.
+:::
+
+## ⚠️ Key Limitation: Bias
+
+AI models are trained on human-generated text, so they inherit our biases.
+
+> If historical data shows that managers are predominantly male, an AI might be more likely to use male pronouns when discussing "a manager."
+
+**Rule #2 of AI:** **ALWAYS question the output for hidden assumptions.**
+
+::: {.notes}
+This is another critical limitation to be aware of. AI is not objective. It learns from the vast, messy, and biased world of text on the internet. This means it can perpetuate and even amplify stereotypes. As a researcher, it's your job to be on the lookout for this and to critically assess whether the AI's output is fair and unbiased.
+:::
+
+## DISCUSSION: Ethics & Privacy
+
+- 🔒 **Confidentiality:** Should you upload unpublished data to a public AI? (Hint: No.)
+- ⚖️ **Authorship:** When does using AI cross the line from 'assistance' to 'plagiarism'?
+- 🛡️ **Accountability:** If an AI makes a mistake in your research, who is responsible?
+
+::: {.notes}
+Let's take a few minutes to discuss some of these important ethical questions. I'll break you into small groups. I want you to talk about these three points. There are no easy answers here, but it's crucial that we, as a research community, engage with these questions thoughtfully.
+(After discussion)
+The consensus is clear: use private systems like OpenWebUI for sensitive data, always disclose your use of AI, and remember that you, the researcher, are always the one who is ultimately accountable for your work.
+:::
+
+# Module 4: Your Journey
+
+## Learning Objectives {background-color="#447099"}
+
+. . .
+
+By the end of this module, you will be able to:
+
+- **Connect** your new AI skills to a structured research process.
+- **Recap** the key takeaways from this workshop.
+- **Formulate** a plan for your next steps in using AI responsibly.
+
+::: {.notes}
+We're in the home stretch. In this final module, we'll bring everything together, connect it back to your own research journey, and make sure you leave with a clear plan for what to do next.
+:::
+
+## The VCH Research Journey
+
+AI can support you at every step of the 8-step Theory U process.
+
+1.  **Problem ID** -> AI can summarize stakeholder interviews.
+2.  **Data Collection** -> AI can help structure raw data.
+3.  **Ideation** -> AI can brainstorm potential solutions.
+4.  **Validation** -> AI can draft feedback surveys.
+5.  **Proposal** -> AI can help draft your MVP document.
+6.  **Engagement** -> AI can summarize community feedback.
+7.  **Testing** -> AI can help document test results.
+8.  **Scaling** -> AI can draft implementation plans.
+
+::: {.notes}
+For those of you familiar with the VCH Theory U process, think about how AI can plug into each stage. It's a tool that can assist you all the way through, from understanding the problem to scaling the solution. It's particularly powerful in the early stages for sense-making and in the later stages for documentation and reporting.
+:::
+
+## Course Recap
+
+What have we learned?
+
+- 🤖 AI is a **powerful research assistant**, not an oracle.
+- 💬 The **quality of your prompt** determines the quality of your output. Remember **CARE**.
+- 🛡️ Use a **safe, private environment** like OpenWebUI for your research.
+- ⚠️ Be critical. Always **verify facts** and **question biases**.
+-  YOU are in control.
+
+::: {.notes}
+Let's quickly recap the most important points from today. If you remember nothing else, remember these things. AI is a tool, you get out what you put in, and you are always the one in the driver's seat. Your critical judgment is your most valuable asset.
+:::
+
+## Your Next Steps
+
+1.  **Start Small:** Don't try to automate your entire workflow tomorrow. Pick one small, low-risk task.
+2.  **Practice:** Use OpenWebUI to summarize articles you're reading or structure your meeting notes.
+3.  **Share:** Talk to your peers and supervisors about how you're using AI. Share what works and what doesn't.
+4.  **Stay Curious:** This field is changing fast. Keep learning and experimenting.
+
+::: {.notes}
+So, what's next? The key is to build momentum. Don't let this be just a workshop. Pick one thing from today and apply it to your work this week. Practice is the only way to get good at this. And please, share your experiences with the community. We'll all learn faster together.
+:::
+
+## Q&A {background-color="#447099"}
+
+::: {.notes}
+Now, I'd like to open it up for any questions you might have.
+:::
+
+## Thank You! {background-color="#28323E"}
+
+<br>
+<br>
+
+**Christiaan Verhoef**
+<br>
+cg.verhoef@windesheim.nl
+<br>
+https://valuechainhackers.xyz
+
+::: {.notes}
+Thank you for your time and participation today. I hope you feel empowered to start using these tools in your own work. Please don't hesitate to reach out if you have any questions.
+:::

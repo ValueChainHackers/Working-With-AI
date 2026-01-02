@@ -1,0 +1,324 @@
+Level 1 – Assisted reading and writing
+
+1. Short summary (for Michiel)
+   Researchers use OpenWebUI with OpenRouter as a safe reading and writing buddy for public and non-sensitive text. It builds basic AI habits without touching documents, data, or tools.
+
+2. Purpose of this level
+   For researchers: make AI feel normal and useful for everyday text work.
+   For the lectorate: low-risk visible improvement in mails, abstracts, and idea generation.
+
+3. What researchers actually do at this level
+   Use one chosen model in chat for questions about topics or courses.
+   Paste short public texts (calls, articles, blogs) for summaries and simplification.
+   Draft or improve mails, abstracts, announcements, LinkedIn posts.
+   Brainstorm research questions, angles, and simple outlines.
+
+4. Researcher goals (learning / behaviour)
+   Feels comfortable opening OpenWebUI for small text tasks.
+   Asks specific questions instead of “do my work”.
+   Edits AI output so it still sounds like their own voice.
+   Can give two examples where AI clearly helped.
+
+5. Criteria: when is someone at this level?
+   Has used OpenWebUI in at least three real work situations.
+   Can show one mail or abstract that AI helped improve and explain their edits.
+   Can explain in simple words what AI can and cannot do at this level.
+   Follows basic rule: no confidential data; always review before sending.
+
+6. Adoption challenges (for researchers)
+   Feeling AI use is cheating or not academic.
+   Not knowing what a good prompt looks like.
+   Tendency to copy-paste AI text without thinking.
+
+How we help them: one short intro with good vs bad prompts; a few before/after examples from our own mails and abstracts; a simple “when to use / when not to use” cheat sheet.
+
+7. Time and support needed
+   Time per researcher: one short workshop plus about one hour of practice; after that used during normal work.
+   Support from lab: starter prompts, one-page guideline, quick help if someone gets stuck.
+   Who can support: you plus one peer champion per team.
+
+8. Infrastructure and data scope
+   Tools used: OpenWebUI basic chat with OpenRouter models only.
+   Data types: public and non-sensitive text only; no partner documents or internal datasets.
+   Dependencies: OpenWebUI running; OpenRouter key configured; user accounts.
+
+9. Risks and how we control them
+   Main risks: hallucinated facts in mails, generic “AI voice”, mild plagiarism.
+   Controls: clear rule to always edit and check; no blind copy-paste; no new facts without a source; no sensitive data in prompts.
+
+10. Tangible outputs and impact
+    Better structured mails, abstracts, and course communication.
+    More and clearer written ideas for projects and proposals.
+    Staff and students feel less stuck when starting a text.
+
+11. Metrics and indicators
+    Usage metrics: number of users and chats per month.
+    Outcome metrics: a few documented before/after examples per year.
+    Example KPI: at least 60 percent of staff have used OpenWebUI for three or more real work tasks at this level.
+
+12. Path to the next level
+    What is missing: AI is not yet working with their own longer notes or project texts; no document sets, no citations.
+    Natural next step: Level 2, where they bring in their own notes and drafts and let AI help structure and improve them.
+
+---
+
+Level 2 – Working with your own texts
+
+1. Short summary (for Michiel)
+   Researchers use OpenWebUI on their own notes, drafts, and emails to clean up and structure text. Still simple, but now connected to real project material.
+
+2. Purpose of this level
+   For researchers: reduce overwhelm by turning messy notes into clear outlines and sections.
+   For the lectorate: faster, more structured proposals, reflections, and internal documents.
+
+3. What researchers actually do at this level
+   Paste their own notes, interview snippets, mail threads, and half-finished paragraphs into chat.
+   Ask for summaries, outlines, and alternative formulations of their material.
+   Use one or two simple prompt patterns such as “turn these notes into an outline” or “rewrite this for partner X”.
+   Iterate between AI suggestions and their own edits.
+
+4. Researcher goals (learning / behaviour)
+   Use AI on their own text, not just public examples.
+   Turn chaos (mixed notes, languages, fragments) into a usable structure.
+   Produce at least one real document (for example proposal section, reflection, or memo) clearly improved by AI support.
+   Understand what input works well and what is too messy or sensitive.
+
+5. Criteria: when is someone at this level?
+   Has used AI on their own project material in at least two different documents.
+   Can show one example where AI turned raw notes into a usable outline or draft.
+   Can explain what they gave to AI and what they kept or changed.
+   Respects rule: no sensitive partner data or contracts at this level unless explicitly cleared.
+
+6. Adoption challenges (for researchers)
+   Uncertainty about what is safe to paste into chat.
+   Mixed language and shorthand notes leading to weird output.
+   Fear of losing their own voice when AI rewrites strongly.
+   Extra friction of copying, pasting, and organising texts instead of just typing in Word.
+
+How we help them: simple data-safety rules; examples of “good input” vs “too messy” input; ready-made prompts for “notes to outline” and “rewrite in my tone”; one short guided exercise on their own text.
+
+7. Time and support needed
+   Time per researcher: one focused session where they try it on their own project text; after that, used whenever they have messy notes.
+   Support from lab: template prompts; short checklist “what to paste / what not to paste”; availability for quick questions.
+   Who can support: you; one or two early adopters who can show their workflow.
+
+8. Infrastructure and data scope
+   Tools used: same OpenWebUI chat with OpenRouter models; no complex RAG yet.
+   Data types: their own non-sensitive project notes and drafts; no bulk partner document uploads; no large PDFs.
+   Dependencies: Level 1 habits; clear data rules.
+
+9. Risks and how we control them
+   Main risks: losing nuance from raw notes; over-rewriting in AI voice; accidental paste of sensitive content.
+   Controls: side-by-side comparison of original vs AI version; mandatory manual edit; data guideline and quick reminder in the UI or workshop.
+
+10. Tangible outputs and impact
+    Cleaner, more structured drafts for proposals, reflections, and memos.
+    Less time lost on sorting old notes and emails.
+    Researchers feel more in control of their own text backlog.
+
+11. Metrics and indicators
+    Usage metrics: number of people who used AI on their own project texts.
+    Outcome metrics: count of documents where AI-assisted restructuring was used.
+    Example KPI: at least 40 percent of staff have used AI to turn their own notes or drafts into a clearer outline or section in at least one project.
+
+12. Path to the next level
+    What is missing: AI still sees only what they paste in; no persistent project document sets; no searching across many files.
+    Natural next step: Level 3, where they build small document collections and “talk” to them with citations.
+
+---
+
+Level 3 – Talking with documents
+
+1. Short summary (for Michiel)
+   Researchers use OpenWebUI and RAG to work with sets of project documents. AI can search, compare, and summarise across PDFs, PPTs, survey exports, and transcripts with citations.
+
+2. Purpose of this level
+   For researchers: replace endless scrolling in PDFs with targeted questions and cited answers.
+   For the lectorate: faster orientation in complex document sets and more traceable background sections in reports.
+
+3. What researchers actually do at this level
+   Create a small document set per project (for example 3–50 files: PDFs, PPTs, Word, CSV exports).
+   Upload files with simple naming and grouping.
+   Ask detailed questions and read answers with citations to specific documents and pages.
+   Compare versions such as policy vs practice, wave 1 vs wave 2, or different partner reports.
+   Use transcripts from lectures, webinars, or meetings as part of the same document set.
+
+4. Researcher goals (learning / behaviour)
+   Build and actually use a mini knowledge base around their project.
+   Quickly find “where do we say X?” or “who mentioned Y?” across the set.
+   Write at least one short cited section (context, related work, or findings summary) based on RAG queries.
+   Understand the limits of RAG (it is not magic, depends on what you upload).
+
+5. Criteria: when is someone at this level?
+   Has created at least one project document set or knowledge base in OpenWebUI.
+   Has asked and answered concrete questions using that set with citations.
+   Can show one paragraph or page in a report that came from this process and point to the sources.
+   Follows agreed rules for which documents are allowed, especially partner material.
+
+6. Adoption challenges (for researchers)
+   Initial friction collecting, cleaning, and uploading files.
+   Unclear practices around naming and structuring document sets.
+   Frustration if early queries do not hit the right passages.
+   Worry about uploading partner documents into “the system”.
+   Feeling that this preparation is extra work next to just reading.
+
+How we help them: a simple “build a knowledge base” checklist; example project they can copy; naming conventions and folder suggestions; clear rule which partner docs are allowed and how access is managed.
+
+7. Time and support needed
+   Time per researcher: two to four hours once per project to gather and upload documents; after that, questions and summaries happen during normal work.
+   Support from lab: help with first setup; tuning of RAG settings if needed; example queries.
+   Who can support: you and one or two people comfortable with the document and RAG settings.
+
+8. Infrastructure and data scope
+   Tools used: OpenWebUI document upload and RAG; possibly Qdrant as external vector store if you choose.
+   Data types: project documents, internal reports, selected partner material, transcripts; all inside project-scoped collections.
+   Dependencies: Level 2 habits; configured RAG backend; some storage space.
+
+9. Risks and how we control them
+   Main risks: wrong or incomplete citations; misinterpretation of partner documents; storing documents in the wrong project space.
+   Controls: citations always visible; simple access rules per project; clear labelling of what is and is not in each collection; manual review of key outputs.
+
+10. Tangible outputs and impact
+    Cited summaries and comparisons for reports and proposals.
+    Faster onboarding of new students and staff into an existing project.
+    Less re-reading and re-locating information across many files.
+
+11. Metrics and indicators
+    Usage metrics: number of active project document sets or knowledge bases.
+    Outcome metrics: number of outputs (sections, memos) that were produced using RAG with citations.
+    Example KPI: at least one active document set and one cited AI-generated summary or comparison per strategic project per year.
+
+12. Path to the next level
+    What is missing: AI still mainly reads documents; it does not yet call tools or automate workflows.
+    Natural next step: Level 4, where agents and tools start to run small analyses and repeatable tasks on top of this information.
+
+---
+
+Level 4 – Tools, agents and workflows
+
+1. Short summary (for Michiel)
+   Researchers start using prebuilt agents and tools in OpenWebUI that can call code, web search, and external services. AI becomes a semi-automated coworker for repetitive and structured tasks.
+
+2. Purpose of this level
+   For researchers: offload recurring, boring tasks to an agent instead of doing them manually each time.
+   For the lectorate: more consistent outputs and visible time savings on real processes.
+
+3. What researchers actually do at this level
+   Use shared agents such as a resilience helper, survey cleaner, CSRD explainer, or report drafter.
+   Trigger tools that run small Python code, web searches, or HTTP calls to n8n, Supabase, or other services.
+   Reuse the same agent weekly for tasks like summarising survey waves, drafting radar narratives, or generating partner-specific summaries.
+   Give feedback to improve prompts and tool behaviour.
+
+4. Researcher goals (learning / behaviour)
+   Regularly delegate at least one recurring task to an agent or tool.
+   Understand in simple terms what the agent does and what it is allowed to call.
+   Explain how using the agent saves time or improves quality in their project.
+   Stay in the loop as editor and owner of the final result.
+
+5. Criteria: when is someone at this level?
+   Has used at least one shared agent or tool in three or more real work moments.
+   Can describe what input they give and how they check the output.
+   Can explain which tools or external services the agent is allowed to use.
+   Has one documented case where a task went from “takes hours” to “takes minutes”.
+
+6. Adoption challenges (for researchers)
+   Feeling that this is too technical or “for programmers”.
+   Fear of breaking something when tools touch data or APIs.
+   Dependence on one expert to configure and maintain agents.
+   Not knowing which agent to use for which task.
+   Risk of over-automation and forgetting to think critically.
+
+How we help them: short live demo of a few agents on real project data; one-page catalogue “which agent for what”; simple request channel for new or adjusted agents; office hours to try agents together.
+
+7. Time and support needed
+   Time per researcher: one focused demo session and about one hour guided practice; after that, agents used during normal work.
+   Support from lab: you or a small tech group to build and maintain agents; documentation for each agent; light training.
+   Who can support: you; maybe one n8n or Supabase person; an interested student assistant.
+
+8. Infrastructure and data scope
+   Tools used: OpenWebUI tools and functions; possibly pipelines; external services like n8n, Supabase, Qdrant, or other APIs.
+   Data types: project and partner data that the agents are explicitly allowed to access, following agreed rules.
+   Dependencies: Levels 2 and 3; basic tool and pipeline configuration; API connections set up.
+
+9. Risks and how we control them
+   Main risks: hidden complexity in tools; wrong calls to external services; quietly propagating errors; overtrust in automation.
+   Controls: clear description of each agent’s scope; role-based access for powerful tools; logging of tool calls; simple tests before using agents in live partner work.
+
+10. Tangible outputs and impact
+    Less manual copy-paste work; faster recurring analyses and summaries.
+    Consistent structure and wording across reports and resilience scans.
+    First clear examples of “this AI setup saves us X hours per month”.
+
+11. Metrics and indicators
+    Usage metrics: number of active agents and tool calls; number of users per agent.
+    Outcome metrics: documented time saved for a few key workflows.
+    Example KPI: each strategic project uses at least one shared agent, with one documented “before / after” time comparison.
+
+12. Path to the next level
+    What is missing: agents and tools exist but full data pipelines and dashboards are still mostly separate.
+    Natural next step: Level 5, where AI agents, data stores, n8n flows, and reporting pipelines are wired into end-to-end lab infrastructure.
+
+---
+
+Level 5 – Full stack lab integration
+
+1. Short summary (for Michiel)
+   OpenWebUI, OpenRouter, n8n, Supabase, Qdrant, and dashboards work together as one system. Researchers use end-to-end AI-supported pipelines, not just individual chats or agents.
+
+2. Purpose of this level
+   For researchers: a stable environment where data, AI, and reporting are connected, so they can focus on research questions.
+   For the lectorate: a reusable research infrastructure that speeds up new projects and strengthens the lab’s position.
+
+3. What researchers actually do at this level
+   Use shared “lab assistants” that read from databases, knowledge bases, and dashboards.
+   Trigger end-to-end flows via agents or buttons (for example from raw data to first report draft).
+   Participate in the design and refinement of a pipeline so it fits their research design.
+   Look at simple logs or dashboards to understand what the pipeline did and where.
+
+4. Researcher goals (learning / behaviour)
+   Use at least one end-to-end pipeline in a real project, not just a demo.
+   Understand the main steps from data source to AI to output well enough to explain them.
+   Provide feedback and small adjustments so the pipeline becomes reusable for future work.
+   Stay responsible for interpretation and final reporting.
+
+5. Criteria: when is someone at this level?
+   Has used a pipeline that connects data, AI, and reporting in at least one live project.
+   Can sketch the main steps on paper: where the data comes from, what AI does, where the result goes.
+   Follows governance rules for data, access, and approvals.
+   Contributes at least one lesson or improvement back into the shared setup.
+
+6. Adoption challenges (for researchers)
+   Coordination with IT, data owners, and partners.
+   Fear that the pipeline becomes a black box they cannot control.
+   Questions about data ownership, access rights, and long-term maintenance.
+   Change fatigue from “another system” next to existing tools.
+
+How we help them: a clear reference architecture picture; one flagship project as example; joint sessions with IT and researchers walking through a real pipeline; simple non-technical documentation per pipeline.
+
+7. Time and support needed
+   Time per researcher: some extra time in initial design and feedback; later the pipeline should save time on each cycle.
+   Support from lab: you plus a small technical team for n8n, Supabase, Qdrant, and deployments; regular maintenance.
+   Who can support: you; one infra-oriented colleague; maybe a data engineer or advanced student.
+
+8. Infrastructure and data scope
+   Tools used: OpenWebUI front-end; OpenRouter models; n8n for orchestration; Supabase and/or other databases; Qdrant for vectors; dashboards or Quarto for reporting.
+   Data types: internal and partner data in governed spaces with clear access rules.
+   Dependencies: Levels 3 and 4 mature; IT and governance agreements in place.
+
+9. Risks and how we control them
+   Main risks: wrong or outdated data flowing through pipelines; unclear responsibilities; dependency on a few people; system drift over time.
+   Controls: explicit ownership per pipeline; logging and monitoring; change management; documented fallbacks if AI or a service fails; regular reviews.
+
+10. Tangible outputs and impact
+    End-to-end flows from data to report that can be reused across projects.
+    Faster startup of new projects; easier reuse of existing logic and structures.
+    Clear stories and demos for management and partners showing lab impact.
+
+11. Metrics and indicators
+    Usage metrics: number of projects using at least one end-to-end pipeline.
+    Outcome metrics: time from raw data to first report draft before vs after.
+    Example KPI: at least two flagship projects per year running on the full stack with documented time savings and quality improvements.
+
+12. Path to the next step
+    What is missing: perfection; there will always be new models, tools, and governance questions.
+    Natural next step: continuous improvement; refining pipelines, adding new agents, and aligning with future regulations and university strategy.
